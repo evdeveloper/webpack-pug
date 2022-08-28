@@ -1,5 +1,6 @@
 const imagemin = require('imagemin');
 const imageminMozjpeg = require('imagemin-mozjpeg');
+const imageminWebp = require('imagemin-webp');
 const imageminPngquant = require('imagemin-pngquant');
 
 (async () => {
@@ -10,7 +11,10 @@ const imageminPngquant = require('imagemin-pngquant');
                 quality: 80
             }),
             imageminPngquant({
-                quality: [0.8, 0.9],
+                quality: [0.8, 0.9]
+            }),
+            imageminWebp({
+                quality: 60
             }),
         ],
     });
