@@ -1,0 +1,7 @@
+mixin sub-nav(activeIndex, navigation)
+    +b.sub-nav
+        +e.BUTTON.current !{navigation[activeIndex].text}
+            +icon('chevron')
+        +e.NAV.links
+            each link, index in navigation
+                +e.A.link(href=link.link class=(index === activeIndex) ? 'active' : '') !{link.text}

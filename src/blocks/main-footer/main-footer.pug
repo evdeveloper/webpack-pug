@@ -1,0 +1,44 @@
+include ../footer-nav/footer-nav
+include ../payment-list/payment-list
+include ../socials/socials
+include ../auth-modal/auth-modal
+include ../feedback-modal/feedback-modal
+include ../up-button/up-button.pug
+
+mixin main-footer()
+    +b.FOOTER.main-footer
+        +inner
+            +e.row.--top
+                +e.A.logo(href='./')
+                    +img('logo-footer.svg', true)(width='264' height='91')
+                    +e.site.__link.--bold www.severnaya.ru
+                +e.BUTTON.appeal.btn.--transparent.js-feedback-trigger(type='button') Пожелания и предложения
+            +e.row.--medium
+                +e.info
+                    p Акционерное общество «Птицефабрика «Северная», ИНН&nbsp;4706002688, ОГРН&nbsp;1024701330741, Россия, 187322, Ленинградская область, Кировский муниципальный район, Синявинское городское поселение, Дорога «Подъезд к Синявинским Высотам от автодороги «Кола», здание 1а.
+                    +e.A.link.--bold(href='#') Показать на карте
+                +e.menu
+                    +footer-nav
+                +e.contacts
+                    +e.A.link(href='tel: 8 (812) 339-30-06')
+                        .icon
+                            +icon('phone')
+                        | 8 (812) 339-30-06
+                    +e.A.link(href='mailto: shop@severnaya.ru')
+                        .icon
+                            +icon('mail')
+                        | shop@severnaya.ru
+                    +e.A.link(href='#')
+                        | Политика конфиденциальности
+                    +e.A.link(href='#')
+                        | Договор публичной оферты
+                    +e.payments
+                        +payment-list
+            +e.row.--bottom
+                +e.socials
+                    +socials
+                +e.copyright 2020 ©Птицефабрика «Северная»
+                +e.A.developer(href='https://zumpunkt.ru/' target='_blank') Разработка сайта Zum Punkt
+    +auth-modal
+    +feedback-modal
+    +up-button

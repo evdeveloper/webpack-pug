@@ -1,0 +1,117 @@
+@import 'variables';
+@import 'mixins';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+
+    scroll-padding-top: 140px; // approximate fixed header height
+}
+
+body {
+    position: relative;
+    min-width: 320px;
+    height: 100%;
+
+    font-family: $font;
+    color: $text-color;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+
+    display: flex;
+    flex-flow: column nowrap;
+
+    background-color: rgb(245, 245, 245);
+
+    &.menu-opened,
+    &.modal-opened,
+    &.search-opened {
+        overflow: hidden;
+    }
+
+    /* prevent transition on load */
+    &:not(.js-loaded) {
+        * {
+            transition: none !important;
+        }
+    }
+}
+
+.visually-hidden {
+    @include visually-hidden;
+}
+
+.content-snippet {
+    color: $text-color-dark;
+    line-height: 1.6;
+
+    @include common-text;
+
+    h2 {
+        margin: 32px 0 24px;
+
+        font-size: 24px;
+        font-weight: 700;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    h3,
+    h4 {
+        margin: 32px 0 16px;
+
+        font-size: 18px;
+        font-weight: 700;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    @media #{$tablet} {
+        h2 {
+            font-size: 32px;
+        }
+
+        h3,
+        h4 {
+            font-size: 24px;
+        }
+    }
+
+    ul {
+        @include common-list;
+    }
+
+    ol {
+        @include ordered-list;
+    }
+
+    ul,
+    ol {
+        margin: 0 0 24px;
+    }
+
+    b {
+        font-weight: 600;
+    }
+
+    a:not(.btn) {
+        @include common-link;
+    }
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.hidden-element {
+    display: none;
+}

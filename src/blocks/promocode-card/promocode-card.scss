@@ -1,0 +1,105 @@
+.promocode-card {
+    position: relative;
+    padding: 24px;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+
+    background: #ffffff;
+    box-shadow: 4px 4px 68px rgba(0, 0, 0, 0.08);
+    border-radius: 0px 40px;
+
+    &.used {
+        pointer-events: none;
+
+        * {
+            opacity: 0.5;
+        }
+
+        .promocode-card__subtitle {
+            padding-right: 86px;
+        }
+
+        .promocode-card__status {
+            opacity: 1;
+        }
+    }
+
+    &__status {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        padding: 8px;
+
+        color: $text-color-white;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 1.2;
+
+        background-color: $secondary-color;
+        border-radius: 99px;
+    }
+
+    &__subtitle {
+        margin: 0 0 8px;
+        color: $theme-color-light;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1.6;
+    }
+
+    &__title {
+        margin: 0 0 8px;
+
+        font-size: 16px;
+        line-height: 1.6;
+        font-weight: 700;
+    }
+
+    &__description {
+        margin: 0 0 24px;
+
+        color: $text-color-grey;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    &__copy.btn {
+        display: flex;
+        align-items: center;
+        margin-top: auto;
+
+        svg {
+            margin-left: 16px;
+            width: 18px;
+            height: 18px;
+            flex: 0 0 auto;
+            margin-top: -3px;
+
+            fill: $secondary-color;
+        }
+    }
+}
+
+@media #{$tablet} {
+    .promocode-card {
+        padding: 24px 32px;
+
+        &__subtitle {
+            font-size: 14px;
+        }
+
+        &__title {
+            font-size: 18px;
+        }
+
+        &__.btn {
+            font-size: 14px;
+        }
+    }
+}
+
+@media #{$desktop} {
+    .promocode-card {
+    }
+}

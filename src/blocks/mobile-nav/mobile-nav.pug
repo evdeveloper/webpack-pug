@@ -1,0 +1,24 @@
+include ../socials/socials
+
+mixin mobile-nav()
+    +b.mobile-nav
+        +e.background
+        +e.content
+            +e.inner
+                +e.UL.menu
+                    each link in mainNav
+                        +e.LI.item
+                            +e.A.link(href=link.link) !{link.text}
+                +e.address
+                    span
+                        | Адрес доставки:
+                    button.js-address-change(type='button') Лиговский, 140
+                +e.footer
+                    +e.info
+                        +e.P.legal
+                            | Акционерное общество «Птицефабрика «Северная», ИНН&nbsp;4706002688, ОГРН&nbsp;1024701330741, Россия, 187322, Ленинградская область, Кировский муниципальный район, Синявинское городское поселение, Дорога «Подъезд к Синявинским Высотам от автодороги «Кола», здание 1а.
+                        +e.A.map-link(href='#') Показать на карте
+                    +e.contacts
+                        +e.A.phone(href='tel:+7 812 339-30-10') +7 812 339-30-10
+                        +e.socials
+                            +socials

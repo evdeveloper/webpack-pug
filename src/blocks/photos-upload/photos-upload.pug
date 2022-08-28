@@ -1,0 +1,22 @@
+mixin photos-upload()
+    +b.photos-upload
+        +e.tip Нажмите, чтобы добавить фотографии (маскимальный размер одного файла: 2Мб)
+        +e.photos
+            +e.photo
+                +e.dropzone
+                    +icon('camera')
+                +e.preview
+            +e.photo
+                +e.dropzone
+                    +icon('camera')
+                +e.preview
+            +e.photo
+                +e.dropzone
+                    +icon('camera')
+                +e.preview
+            +e.preview-template
+                .dz-preview
+                    +e.BUTTON.remove-file(type='button' data-dz-remove)
+                        +icon('close')
+                    +e.preview-image
+                        img(data-dz-thumbnail='')

@@ -1,0 +1,7 @@
+mixin category-card(data)
+    +b.category-card
+        +e.image
+            +img(data.image, true)
+        +e.content
+            +e.A.title(href='catalog-page.html') !{data.title}
+            +e.subtitle !{data.subtitle}

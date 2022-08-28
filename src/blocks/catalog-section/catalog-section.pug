@@ -1,0 +1,16 @@
+include ../custom-select/custom-select
+include ../product-card/product-card
+
+mixin catalog-section()
+    +b.SECTION.catalog-section
+        +inner
+            +e.filters
+                each filter in catalog.filters
+                    +e.filter
+                        +custom-select(filter)
+            +e.products
+                each card in catalog.products
+                    +e.product
+                        +product-card(card)
+            +e.actions
+                +e.BUTTON.more.btn(type='button') Показать еще 12 из 232

@@ -1,0 +1,17 @@
+extends ../account-layout
+
+include ../../blocks/user-addresses/user-addresses
+include ../../blocks/edit-address-modal/edit-address-modal
+include ../../blocks/add-address-modal/add-address-modal
+
+block variables
+    -const activeIndex = 2
+
+block head
+
+block content
+    +user-addresses
+
+append modals
+    +edit-address-modal
+    +add-address-modal

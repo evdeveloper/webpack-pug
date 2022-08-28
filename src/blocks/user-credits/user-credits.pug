@@ -1,0 +1,20 @@
+mixin user-credits()
+    +b.SECTION.user-credits
+        +inner
+            +e.FORM.form(action='/user.php')
+                +e.inputs-row
+                    +e.input
+                        +custom-input({name: 'name', label: 'Имя', id: 'userName', required: true})(data-validate='text' value='Всеволод')
+                    +e.input
+                        +custom-input({name: 'surname', label: 'Фамилия', id: 'userSurname', required: true})(data-validate='text' value='Солнцеликий')
+                +e.inputs-row
+                    +e.input
+                        +custom-input({name: 'email', label: 'Email', id: 'userEmail', required: true})(data-validate='email' value='sunnyboy@yahoo.com')
+                    +e.input
+                        +custom-input({name: 'phone', label: 'Телефон', id: 'userPhone', required: true})(data-validate='phone' value='+79219899911' disabled)
+                +e.inputs-row
+                    +e.input.--half
+                        +custom-input({name: 'birthday', label: 'Дата рождения', id: 'userBirthday', required: true})(data-validate='birthday' value='01.01.2001')
+                +e.inputs-row
+                    +e.input.--half
+                        +e.submit.btn.btn--orange(type='submit') Сохранить

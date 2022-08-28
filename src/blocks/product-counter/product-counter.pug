@@ -1,0 +1,5 @@
+mixin product-counter(amount = 1)
+    +b.product-counter(data-max='5')
+        +e.SPAN.control.disabled(data-action='minus' tabindex='0' role='button' title='Уменьшить количество')
+        +e.SPAN.current !{amount}
+        +e.SPAN.control(data-action='plus' tabindex='0' role='button' title='Увеличить количество')

@@ -1,0 +1,58 @@
+.index-sales {
+    padding: 48px 0 24px;
+
+    &__list {
+        margin-bottom: -32px;
+    }
+
+    &__card {
+        max-width: 400px;
+        margin: 0 auto;
+        padding-bottom: 32px;
+    }
+}
+
+@media #{$tablet} {
+    .index-sales {
+        padding: 64px 0 32px;
+
+        &__list {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            margin: 0 -16px -32px;
+        }
+
+        &__card {
+            width: 50%;
+            padding: 0 16px 32px;
+            margin: 0;
+            max-width: 480px;
+        }
+    }
+}
+
+@media #{$laptop} {
+    .index-sales {
+        &__list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &__card {
+            width: 100%;
+            max-width: none;
+
+            &--big {
+                grid-row: span 2;
+                min-height: 512px;
+            }
+        }
+    }
+}
+
+@media #{$desktop} {
+    .index-sales {
+        padding: 80px 0 40px;
+    }
+}

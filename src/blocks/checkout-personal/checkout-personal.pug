@@ -1,0 +1,37 @@
+include ../custom-input/custom-input
+
+mixin checkout-personal()
+    +b.checkout-step.checkout-personal
+        +e.body
+            +e.top
+                +e.header
+                    +e.H2.title Ваши данные
+                    +e.BUTTON.action.btn.--transparent.js-auth-trigger(type='button') Войти
+            +e.inputs
+                +e.inputs-row
+                    +e.input
+                        +custom-input({name: 'fio', label: 'ФИО', id: 'userFullName', required: true})(data-validate='text')
+                +e.inputs-row
+                    +e.input.phone-input-block
+                        +custom-input({name: 'phone', label: 'Телефон', id: 'userPhone', required: true})(data-validate='phone')
+                    +e.input.code-input-block.disabled
+                        +custom-input({name: 'code', label: 'Код из смс', id: 'userPhoneCode', required: true})
+                            span.code-input-timer(id='codeTimer' style='display:none') 0:
+                                span.seconds 59
+                    +e.input.get-code-btn
+                        button.phone-code.disabled(id='getPhoneCode') Получить код
+                        button.phone-code(id='sendPhoneCode' style='display:none') Отправить код
+                +e.inputs-row.private-policy-block(style='display:none')
+                    span.private-policy-text Нажимая «Отправить код» вы подтверждаете, что ознакомлены и согласны с <a href="#">условиями обработки персональных данных</a>.
+                +e.inputs-row.phone-check-result(style='display:none')
+                    div.private-policy-text Для вас будет создан личный кабинет с авторизацией по номеру телефона.
+                +e.inputs-row
+                    +e.input
+                        +custom-input({name: 'email', label: 'Email', id: 'userEmail', required: true})(data-validate='email')
+                +e.inputs-row
+                    +e.input
+                        +custom-input({inputType: 'textarea', name: 'comment', label: 'Комментарий к заказу', id: 'userComment'})(rows='1')
+        +e.footer.--green
+            | Новым покупателям мы дарим бесплатную доставку
+            |
+            a(href='#') на первые 3 заказа

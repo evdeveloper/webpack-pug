@@ -1,0 +1,15 @@
+extends ../page-layout
+
+include ../../blocks/sub-nav/sub-nav
+include ../../blocks/content-section/content-section
+include ../../blocks/faq-section/faq-section
+
+block variables
+    -const pageTitle = 'Часто задаваемые вопросы'
+
+block head
+
+block content
+    +sub-nav(3, devNav.infoPages)
+    +content-section
+        +faq-section

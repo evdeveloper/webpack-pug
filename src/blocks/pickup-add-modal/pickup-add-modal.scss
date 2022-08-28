@@ -1,0 +1,73 @@
+.pickup-add-modal {
+    &__close {
+        top: 16px;
+        right: 16px;
+    }
+
+    &__body {
+        position: relative;
+        padding: 24px 16px;
+        width: 100%;
+        max-width: 370px;
+        &--wide {
+            max-width: 450px;
+        }
+        margin: 0 auto;
+
+        background: #ffffff;
+        border-radius: 8px;
+    }
+
+    &__heading {
+        margin: 0 0 24px;
+
+        color: $secondary-color;
+        font-size: 16px;
+        line-height: 1.4;
+        font-weight: 700;
+    }
+
+    &__inputs-row {
+        display: flex;
+        flex-flow: row wrap;
+        margin: 0 -8px;
+    }
+
+    &__input {
+        padding: 0 8px 24px;
+        flex: 1 1 auto;
+        width: 20%;
+        min-width: 100px;
+    }
+
+    &__actions {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -8px -16px;
+
+        justify-content: center;
+
+        > button {
+            width: 40%;
+            min-width: 120px;
+            flex: 1 1 auto;
+            margin: 0 8px 16px;
+        }
+    }
+    .delivery-address-modal__cards-inner {
+        padding-left: 0;
+    }
+}
+
+@media #{$tablet} {
+    .edit-address-modal {
+        &__body {
+            padding: 24px;
+        }
+    }
+}
+
+@media #{$desktop} {
+    .edit-address-modal {
+    }
+}

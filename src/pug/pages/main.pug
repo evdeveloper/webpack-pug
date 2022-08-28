@@ -1,0 +1,29 @@
+extends ../layout
+
+include ../../blocks/main-header/main-header
+include ../../blocks/main-footer/main-footer
+include ../../blocks/hero-screen/hero-screen
+include ../../blocks/index-sales/index-sales
+include ../../blocks/product-types/product-types
+include ../../blocks/testimonials-slider/testimonials-slider
+include ../../blocks/testimonial-modal-card/testimonial-modal-card
+include ../../blocks/delivery-address-modal/delivery-address-modal
+include ../../blocks/testimonial-form-modal/testimonial-form-modal
+
+block variables
+    -const bodyClass = 'main-page'
+
+block head
+
+block page
+    +main-header
+    +hero-screen
+    +index-sales
+    +product-types
+    +testimonials-slider('Отзывы', testimonials.products)
+    +main-footer
+
+append modals
+    +testimonial-modal-card(testimonials.products[0])
+    +delivery-address-modal
+    +testimonial-form-modal

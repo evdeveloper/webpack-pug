@@ -1,0 +1,226 @@
+.main-footer {
+    padding: 40px 0;
+    margin-top: auto;
+
+    color: $theme-color;
+
+    background-color: #fff;
+    box-shadow: 4px 4px 80px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+
+    &__row {
+        margin-bottom: 32px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &--bottom {
+            padding-top: 32px;
+
+            border-top: 1px solid rgba($theme-color, 0.2);
+        }
+    }
+
+    &__logo {
+        display: block;
+        margin-bottom: 24px;
+
+        img {
+            display: block;
+        }
+    }
+
+    &__appeal.btn {
+        font-size: 14px;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    &__site {
+        padding-top: 16px;
+    }
+
+    &__link {
+        display: inline-flex;
+        align-items: center;
+
+        font-size: 14px;
+        line-height: 1.6;
+        color: $theme-color;
+        text-decoration: underline;
+
+        transition: opacity 300ms ease;
+
+        &--bold {
+            font-weight: 700;
+        }
+
+        &:hover {
+            opacity: 0.6;
+        }
+
+        .icon {
+            position: relative;
+            width: 24px;
+            height: 24px;
+            margin-right: 6px;
+            flex: 0 0 auto;
+
+            svg {
+                @include svg-icon;
+
+                fill: currentColor;
+            }
+        }
+    }
+
+    &__info {
+        margin-bottom: 32px;
+
+        p {
+            margin: 0 0 16px;
+
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+    }
+
+    &__map-link {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1.6;
+        color: $theme-color;
+        text-decoration: underline;
+
+        transition: opacity 300ms ease;
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+
+    &__menu {
+        margin-bottom: 32px;
+    }
+
+    &__contacts {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+
+        .main-footer__link {
+            margin-bottom: 16px;
+        }
+    }
+
+    &__socials {
+        margin: 0 0 16px;
+    }
+
+    &__copyright {
+        margin: 0 0 16px;
+
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.6;
+    }
+
+    &__developer {
+        display: block;
+
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.6;
+        color: $theme-color;
+        text-decoration: none;
+
+        transition: opacity 300ms ease;
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}
+
+@media #{$tablet} {
+    .main-footer {
+        &__row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+
+            &--top {
+                justify-content: space-between;
+            }
+
+            &--medium {
+                align-items: flex-start;
+            }
+
+            &--bottom {
+                justify-content: space-between;
+                margin-bottom: -16px;
+            }
+        }
+
+        &__logo {
+            margin-bottom: 0;
+        }
+
+        &__appeal.btn {
+            font-size: 16px;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        &__info {
+            width: 30%;
+            flex: 1 1 auto;
+            padding-right: 32px;
+        }
+
+        &__menu {
+            padding-right: 32px;
+        }
+
+        &__payments {
+            min-width: 296px;
+        }
+
+        &__developer {
+            margin-bottom: 16px;
+        }
+
+        &__copyright {
+            order: -1;
+        }
+    }
+}
+
+@media #{$desktop} {
+    .main-footer {
+        padding: 48px 0;
+
+        &__info {
+            padding-right: 50px;
+        }
+
+        &__menu {
+            padding-right: 50px;
+        }
+
+        &__contacts {
+            align-items: flex-end;
+        }
+    }
+}
+
+@media #{$smallDesktop} {
+    .main-footer {
+        &__info {
+            text-align: justify;
+        }
+    }
+}

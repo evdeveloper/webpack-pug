@@ -1,0 +1,22 @@
+include ../index-sales-card/index-sales-card
+
+mixin index-sales()
+    +b.SECTION.index-sales
+        +inner
+            +e.header
+                +heading('Акции', '#', 'Все акции')
+            +e.list
+                +e.card.--big
+                    +index-sales-card(sales[0])
+                +e.card
+                    +index-sales-card(sales[1]) 
+                +e.card.--big
+                    +index-sales-card(sales[2])
+                +e.card
+                    +index-sales-card(sales[3])
+                +e.card.--big
+                    +index-sales-card(sales[4])
+                +e.card
+                    +index-sales-card(sales[4])
+                +e.card
+                    +index-sales-card(sales[2])

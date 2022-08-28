@@ -1,0 +1,58 @@
+.banner-card {
+    position: relative;
+    padding: 32px 24px 24px;
+
+    color: $text-color-white;
+
+    background-color: $theme-color;
+    background-image: url(../assets/images/cock.svg);
+    background-size: auto;
+    background-position: top 20% left -20%;
+    background-repeat: no-repeat;
+    border-radius: 16px;
+
+    &__close {
+        @include btn-reset;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 24px;
+        right: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+            width: 18px;
+            height: 18px;
+
+            fill: $text-color-white;
+        }
+    }
+
+    &__title {
+        padding-right: 24px;
+        margin: 0 0 8px;
+
+        font-size: 18px;
+        line-height: 1.4;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    &__text {
+        margin: 0 0 8px;
+
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.4;
+    }
+
+    &__action {
+        display: inline-block;
+        color: currentColor;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1.4;
+    }
+}

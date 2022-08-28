@@ -1,0 +1,15 @@
+mixin main-nav(mod = '')
+    +b.NAV.main-nav(class=mod)
+        +e.UL.list
+            each link in mainNav
+                +e.LI.item
+                    +e.A.link(href=link.link) !{link.text}
+                    if (link.innerNav)
+                        +e.UL.inner-menu
+                            each innerLink in link.innerNav
+                                +e.inner-item
+                                    +e.A.inner-link(href=innerLink.link)
+                                        | !{innerLink.text}
+                                        if (innerLink.image)
+                                            +e.image
+                                                +img(innerLink.image, true)

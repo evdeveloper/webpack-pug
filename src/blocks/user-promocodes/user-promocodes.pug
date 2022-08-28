@@ -1,0 +1,12 @@
+include ../promocode-card/promocode-card
+include ../content-filter/content-filter
+
+mixin user-promocodes()
+    +b.SECTION.user-promocodes
+        +inner
+            +e.filter
+                +content-filter(filter)
+            +e.list
+                each card in promocodes
+                    +e.card(data-id=card.id)
+                        +promocode-card(card)

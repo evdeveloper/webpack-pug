@@ -1,0 +1,18 @@
+extends ../page-layout
+
+include ../../blocks/testimonials-section/testimonials-section
+include ../../blocks/testimonial-modal-card/testimonial-modal-card
+include ../../blocks/testimonial-form-modal/testimonial-form-modal
+
+block variables
+    -const pageTitle = 'Отзывы'
+
+block head
+
+block content
+    +testimonials-section
+
+append modals
+    +testimonial-modal-card(testimonials.products[0])
+    +testimonial-form-modal
+

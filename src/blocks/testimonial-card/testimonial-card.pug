@@ -1,0 +1,12 @@
+mixin testimonial-card(data, showMore = true)
+    +b.testimonial-card
+        +e.header
+            +e.author !{data.author}
+            if (data.date)
+                +e.TIME.info(datetime="2021-07-05") !{data.date}
+            if (data.info)
+                +e.info !{data.info}
+        +e.text
+            block
+        if (showMore)
+            +e.BUTTON.more.js-testimonial-full(type='button' data-id='1') Читать весь отзыв

@@ -1,0 +1,27 @@
+extends ../page-layout
+
+include ../../blocks/content-section/content-section
+include ../../blocks/location-contacts/location-contacts
+include ../../blocks/pickup-terms/pickup-terms
+include ../../blocks/checkout-instruction/checkout-instruction
+
+block variables
+    -const pageTitle = 'Самовывоз'
+
+block head
+
+block content
+    +content-section
+        h2 Получение заказа в пункте самовывоза
+        p После оплаты с Вами свяжется менеджер интернет-магазина и подтвердит Ваш заказ. Товар доставляется на следующий день в пункт самовывоза OZON по адресу: Торфяная дорога 7Б.
+        p Срок хранения - <b>1 календарный день.</b><br> На все заказы действует <b>100% предоплата товара.</b>
+        p Обращаем внимание, что данный пункт самовывоза является партнерским, где Вы можете получить заказ, заранее оформленный в нашем интернет-магазине. Полный ассортимент Товаров там не представлен.
+        p <b>Минимальной суммы заказа нет, доставка до пункта самовывоза бесплатная.</b>
+    +location-contacts('pickup')
+        h2 Пункт самовывоза:
+        p Адрес: г. Санкт-Петербург, <br> <a href='https://yandex.ru/maps/-/CCUaUDagTC' target='_blank'>м. Старая Деревня, Торфяная дор., д. 7Б</a>
+        p Телефон: <br> <a href='tel: 8 (911) 276-52-36'> 8 (911) 276-52-36</a>
+        p Время работы выдачи товаров интернет-магазина птицефабрики «Северная»: <br> ПН-ПТ, ВС 14:00 до 22:00
+        p <b>Суббота – выдачи нет</b>
+    +pickup-terms
+

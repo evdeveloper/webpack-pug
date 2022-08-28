@@ -1,0 +1,18 @@
+extends ../page-layout
+
+include ../../blocks/cart-section/cart-section
+include ../../blocks/elevation-tariffs/elevation-tariffs
+include ../../blocks/saved-addresses/saved-addresses
+
+block variables
+    -const pageTitle = 'корзина'
+
+block head
+
+block content
+    +cart-section
+
+append modals
+    +elevation-tariffs
+    +saved-addresses
+

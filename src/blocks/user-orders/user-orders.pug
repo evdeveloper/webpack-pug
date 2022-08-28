@@ -1,0 +1,12 @@
+include ../order-card/order-card
+include ../content-filter/content-filter
+
+mixin user-orders()
+    +b.SECTION.user-orders
+        +inner
+            +e.filter
+                +content-filter(filter)
+            +e.list
+                each order in orders
+                    +e.order(data-id=order.id)
+                        +order-card(order)

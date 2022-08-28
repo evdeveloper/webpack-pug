@@ -1,0 +1,63 @@
+.saved-addresses {
+    &__close {
+        top: 16px;
+        right: 16px;
+    }
+
+    &__body {
+        position: relative;
+        padding: 32px 16px;
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+
+        background: #ffffff;
+        border-radius: 8px;
+    }
+
+    &__heading {
+        margin: 0 0 24px;
+
+        font-size: 16px;
+        line-height: 1.4;
+        font-weight: 700;
+    }
+
+    &__card {
+        margin-bottom: 24px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+@media #{$tablet} {
+    .saved-addresses {
+        &__body {
+            max-width: 860px;
+            padding: 40px;
+        }
+
+        &__heading {
+            font-size: 24px;
+        }
+
+        &__cards {
+            display: flex;
+            flex-flow: row wrap;
+            margin: 0 -20px -40px;
+        }
+
+        &__card {
+            width: 50%;
+            padding: 0 20px 40px;
+            margin: 0;
+        }
+    }
+}
+
+@media #{$desktop} {
+    .saved-addresses {
+    }
+}

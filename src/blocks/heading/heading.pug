@@ -1,0 +1,4 @@
+mixin heading(title, link, text, tag = 'h2', subtitle = false, mod='')
+    +b.heading
+        #{tag.toUpperCase()}.heading__title(class=mod) !{title}
+        +e.A.link(href=link) !{text}

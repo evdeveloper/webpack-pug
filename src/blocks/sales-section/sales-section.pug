@@ -1,0 +1,16 @@
+include ../sales-card/sales-card
+
+mixin sales-section()
+    +b.SECTION.sales-section
+        +inner
+            +e.list
+                +e.card
+                    +sales-card(sales[0])
+                +e.card
+                    +sales-card(sales[1])
+                +e.card.--big
+                    +sales-card(sales[2])
+                +e.card
+                    +sales-card(sales[3])
+                +e.card
+                    +sales-card(sales[4])

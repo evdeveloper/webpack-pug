@@ -1,0 +1,31 @@
+include ../about-guarantee/about-guarantee
+
+mixin about-descr()
+    script.
+        window.guarantee = !{JSON.stringify(gurantees.items)}
+    +b.SECTION.about-descr
+        +b.DIV.about-descr__pic.animate
+            +img('about/made-in-lo_1.svg')
+        +b.DIV.about-descr__text.animate 
+            +b.P.text
+                b Shop.severnaya 
+                | – единственный официальный фирменный
+                br
+                | онлайн-магазин Птицефабрики «Северная».
+            +b.P.text 
+                | Более 20 лет Птицефабрика «Северная» является ведущим локальным производителем мяса цыплят-бройлеров в Северо-Западном регионе России. Все производственные площадки Северной расположены в Ленинградской области.
+            +b.P.text 
+                | С 2015 года наша продукция стала «лицом» родного региона и маркируется знаком отличия «Сделано в Ленинградской области».
+            +b.P.text 
+                | Производственный цикл – от корма до упаковки - является замкнутым, а каждый производственный этап строго подчинен единой системе контроля.
+            +b.P.text
+                a(href='https://severnaya.ru/manufacture/') Подробнее о производстве Птицефабрики «Северная»
+    +b.SECTION.about-quote
+        +img('about/quote.svg', true)
+        +b.P.quote.animate Быть региональным брендом – это, в первую очередь, большая ответственность. Мы понимаем, что наш продукт попадет на кухни миллионов семей, и он должен быть безопасным и вкусным. Попробуйте настоящее качество от надежного местного производителя по доступным ценам напрямую с фабрики.
+        +img('about/quote.svg', true)
+    +b.SECTION.about-guarantees
+        +b.H2.title.animate Мы гарантируем
+        +b.UL.about-guarantees__list
+            each item in gurantees.items
+                +about-guarantee(item)

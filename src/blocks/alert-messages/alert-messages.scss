@@ -1,0 +1,93 @@
+.alert-messages {
+    position: fixed;
+    z-index: 211;
+    width: 100%;
+    bottom: 32px;
+    left: 0;
+    pointer-events: none;
+
+    color: $text-color-white;
+
+    &__wrapper {
+        @include container;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+
+    &__note {
+        position: relative;
+        display: none;
+        width: 100%;
+        max-width: 470px;
+        padding: 20px 32px;
+        margin-bottom: 24px;
+        padding-right: 76px;
+
+        background-color: $green;
+        border-radius: 8px;
+        pointer-events: all;
+
+        &.error {
+            background-color: $accent-color;
+        }
+
+        &:last-child {
+            margin-bottom: 0px;
+        }
+    }
+
+    &__title {
+        max-width: 280px;
+        margin-bottom: 20px;
+
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.3;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__status {
+        font-size: 14px;
+
+        &:empty {
+            margin-top: -20px;
+        }
+    }
+
+    &__close {
+        @include btn-reset;
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        top: 12px;
+        right: 16px;
+
+        cursor: pointer;
+
+        svg {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            fill: $text-color-white;
+        }
+    }
+}
+
+@media #{$tablet} {
+    .alert-messages {
+    }
+}
+
+@media #{$desktop} {
+    .alert-messages {
+    }
+}

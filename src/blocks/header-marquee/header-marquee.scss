@@ -1,0 +1,29 @@
+.header-marquee {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    z-index: 111;
+
+    background-color: $secondary-color;
+    overflow: hidden;
+    white-space: nowrap;
+    user-select: none;
+
+    &__inner {
+        display: flex;
+        flex-flow: row nowrap;
+
+        color: #fff;
+        font-size: 16px;
+        line-height: 40px;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    &__text {
+        flex: 0 0 auto;
+        padding: 0 20px;
+    }
+}

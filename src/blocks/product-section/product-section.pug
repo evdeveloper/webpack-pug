@@ -1,0 +1,57 @@
+include ../product-counter/product-counter
+include ../custom-select/custom-select
+
+mixin product-section(product)
+    +b.SECTION.product-section(data-id='2' data-parent='')
+        +inner
+            +e.wrapper
+                +e.slider
+                    //- +e.slider-inner
+                    +e.slides
+                        each slide, index in product.slides
+                            +e.slide
+                                +e.slide-image
+                                    -const lazyLoad = index > 0 ? 'lazy-product-image' : ''
+                                    +img(slide, lazyLoad)(width='320' height='320')
+                    +e.slider-inner
+                        +e.advantages
+                            each item in product.advantages
+                                +e.advantage
+                                    +e.advantage-icon
+                                        +img(item.icon, true)
+                                    +e.advantage-label !{item.label}
+                        +e.thumbnails
+                            each thumb, index in product.thumbnails
+                                +e.BUTTON.thumbnail(type='button' class=(index === 0) ? 'active' : '')
+                                    +img(thumb, true)
+                +e.data
+                    +e.info
+                        +e.labels
+                            each label in product.labels
+                                +e.label(style=`background-color: ${label.color}`) !{label.text}
+                        +e.H1.title !{product.title}
+                        +e.brand !{product.brand}
+                        +e.article !{product.article}
+                        +e.prices
+                            +e.current-price
+                                span(data-current) 322,58
+                                | ₽
+                            +e.old-price !{product.prices.old}
+                        +e.actions
+                            +e.counter
+                                +product-counter
+                            +e.pack
+                                +custom-select(product.packSelect)
+                        +e.spec
+                            each block in product.spec
+                                +e.spec-block(class=block.modifier || '')
+                                    +e.spec-title !{block.title}
+                                    +e.spec-text !{block.value}
+                        +e.BUTTON.buy.btn.--orange(type='button') Добавить в корзину
+                    +e.description
+                        each block in product.description
+                            +e.description-block(class=block.modifier || '')
+                                +e.description-title !{block.title}
+                                +e.desctiption-text !{block.value}
+                        +e.note Фотография является примером возможной сервировки.
+

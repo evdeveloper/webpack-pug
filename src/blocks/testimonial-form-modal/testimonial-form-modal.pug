@@ -1,0 +1,24 @@
+
+mixin testimonial-form-modal()
+    .modal#testimonialFormModal(aria-hidden='true')
+        +b.testimonial-form-modal
+            .modal__overlay(tabindex='-1' data-micromodal-close='')
+                .modal__dialog(role='dialog' aria-modal='true' aria-labelledby='title' data-micromodal-close='')
+                    +e.body
+                        +e.BUTTON.close.modal__close(aria-label='Закрыть окно' data-micromodal-close='')
+                            svg(id="close" viewBox="0 0 14 14" aria-label="Иконка")
+                                path(d="M.408 11.998c-.378.387-.395 1.072.009 1.468.404.395 1.081.386 1.468.009l4.992-4.993 4.983 4.993c.396.386 1.073.395 1.468-.01.396-.403.404-1.071.009-1.467L8.345 7.006l4.992-4.984a1.048 1.048 0 00-.009-1.467 1.065 1.065 0 00-1.468-.01L6.877 5.539 1.885.546C1.498.168.812.15.417.555.021.959.03 1.635.408 2.014L5.4 7.006.408 11.998z")
+                        +e.heading(arial-label='title') Оставить отзыв
+                        +e.FORM.form(action='/testimonial-submit.php')
+                            +e.inputs-row
+                                +e.input
+                                    +custom-input({name: 'full-name', label: 'ФИО', id: 'testimonialFullName', required: true})(data-validate='text')
+                            +e.inputs-row
+                                +e.input
+                                    +custom-input({inputType: 'email', name: 'email', label: 'Email', id: 'testimonialEmail', required: true})(data-validate='email')
+                            +e.inputs-row
+                                +e.input
+                                    +custom-input({inputType: 'textarea', name: 'comment', label: 'Напишите отзыв', id: 'testimonialComment', required: true})(rows='3' data-validate='text')
+                            +e.actions
+                                +e.BUTTON.confirm.btn.--orange(type='submit') Отправить
+                                +e.P.policy Нажимая на кнопку «Отправить», Вы подтверждаете, что ознакомлены с #[a(href="/") политикой конфиденциальности]

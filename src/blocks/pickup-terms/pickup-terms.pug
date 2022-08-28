@@ -1,0 +1,12 @@
+mixin pickup-terms()
+    +b.SECTION.pickup-terms
+        +inner
+            +e.container
+                +e.header
+                    +heading('Условия доставки в пункт самовывоза')
+                +e.list
+                    each term in terms
+                        +e.item
+                            +e.icon
+                                +img(term.icon, true)
+                            +e.label !{term.label}

@@ -1,0 +1,18 @@
+.checkout-draft {
+  color: #333333;
+  margin-bottom: 55px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+
+  a {
+    color: #333333;
+    font-weight: 600;
+    text-decoration: underline;
+    transition: color 300ms ease;
+
+    &:hover {
+      color: #f0af13;
+    }
+  }
+}

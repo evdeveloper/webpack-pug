@@ -1,0 +1,55 @@
+.pickup-card {
+    position: relative;
+    padding: 24px;
+
+    background-color: transparent;
+    border-radius: 16px;
+
+    transition: box-shadow 300ms ease;
+
+    cursor: pointer;
+
+    &:hover {
+        background-color: #fff;
+        box-shadow: 2px 2px 27px rgba(0, 0, 0, 0.06);
+    }
+
+    &__index {
+        position: absolute;
+        color: $text-color-grey;
+        font-size: 26px;
+        font-weight: 700;
+        top: 24px;
+        left: 24px;
+    }
+
+    &__content {
+        padding-left: 36px;
+    }
+
+    &__block {
+        margin-bottom: 16px;
+
+        font-size: 14px;
+        line-height: 1.4;
+        color: $text-color-grey;
+
+        b {
+            font-weight: 700;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+@media #{$tablet} {
+    .pickup-card {
+    }
+}
+
+@media #{$desktop} {
+    .pickup-card {
+    }
+}

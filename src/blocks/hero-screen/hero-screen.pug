@@ -1,0 +1,23 @@
+mixin hero-screen()
+    +b.SECTION.hero-screen
+        +e.banners
+            +e.banner.--fade
+                +e.image
+                    +picture-helper({desktop: 'hero-screen/banner1.jpg', tablet: 'hero-screen/banner1_tablet.jpg', mobile: 'hero-screen/banner1_mobile.jpg'}, 'lazy-banner')
+                +e.content
+                    +e.title Очень вкусные котлеты
+                    +e.A.link.btn.--orange(href='./product-page.html') Купить котлетки
+        +e.advantages-wrapper
+            +e.UL.advantages
+                +e.LI.advantage
+                    +e.advantage-icon
+                        +img('hero-screen/advantage1.svg')
+                    +e.advantage-label Гарантия лучшей цены
+                +e.LI.advantage
+                    +e.advantage-icon
+                        +img('hero-screen/advantage2.svg')
+                    +e.advantage-label Гарантия свежести
+                +e.LI.advantage
+                    +e.advantage-icon
+                        +img('hero-screen/advantage3.svg')
+                    +e.advantage-label Быстрая доставка

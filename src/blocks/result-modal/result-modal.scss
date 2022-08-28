@@ -1,0 +1,59 @@
+.result-modal {
+    &__body {
+        position: relative;
+        padding: 52px 24px;
+        max-width: 600px;
+
+        text-align: center;
+
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+        background-image: url(../assets/images/cock.svg);
+        background-size: auto;
+        background-position: top 20% left -20%;
+        background-repeat: no-repeat;
+
+        &.success {
+            background-color: $green;
+
+            color: $text-color-white;
+
+            .result-modal__close  svg {
+                fill: $text-color-white;
+            }
+        }
+    }
+
+    &__title {
+        margin: 0 0 8px;
+
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.3;
+    }
+
+    &__subtitle {
+        margin: 0;
+
+        font-size: 14px;
+        line-height: 1.45;
+    }
+}
+
+@media #{$tablet} {
+    .result-modal {
+        &__body {
+            padding: 80px;
+        }
+
+        &__title {
+            font-size: 24px;
+        }
+    }
+}
+
+@media #{$desktop} {
+    .result-modal {
+    }
+}

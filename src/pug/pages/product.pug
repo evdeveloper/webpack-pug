@@ -1,0 +1,23 @@
+extends ../page-layout
+
+include ../../blocks/breadcrumbs/breadcrumbs
+include ../../blocks/product-section/product-section
+include ../../blocks/testimonials-slider/testimonials-slider
+include ../../blocks/products-pack/products-pack
+include ../../blocks/testimonial-modal-card/testimonial-modal-card
+include ../../blocks/testimonial-form-modal/testimonial-form-modal
+
+block variables
+    -const pageTitle = false
+
+block head
+
+block content
+    +breadcrumbs(breadcrumbs)
+    +product-section(product)
+    +testimonials-slider('Отзывы о товаре', testimonials.products)
+    +products-pack
+
+append modals
+    +testimonial-modal-card(testimonials.products[0])
+    +testimonial-form-modal

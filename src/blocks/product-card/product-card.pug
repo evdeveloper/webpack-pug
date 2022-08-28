@@ -1,0 +1,27 @@
+include ../custom-select/custom-select
+
+mixin product-card(data)
+    +b.ARTICLE.product-card(data-id='1' data-parent='')
+        +e.header
+            +e.image
+                +img(data.image, true)
+            if (data.labels)
+                +e.labels
+                    each label in data.labels
+                        +e.label(style=`background-color: ${label.color}`) !{label.text}
+        +e.body
+            +e.A.title(href='./product-page.html') !{data.title}
+            if (data.unitPrice)
+                +e.unit-price 
+                    span !{data.unitPrice}
+            if (data.packSelect)
+                +e.pack
+                    +custom-select(data.packSelect)(class='small')
+        +e.footer
+            +e.BUTTON.buy(type='button' title='Добавить в корзину')
+                +icon('cart_add')
+            +e.prices
+                +e.current-price 
+                    span !{data.prices.current}
+                +e.old-price 
+                    span !{data.prices.old || ''}

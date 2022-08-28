@@ -1,0 +1,5 @@
+mixin index-sales-card(data)
+    +b.index-sales-card.lazy-bg(data-background=require(`@/assets/images/${data.image}`) data-background-mobile=require(`@/assets/images/${data.image_mobile}`))
+        +e.A.title(href=data.link) !{data.title}
+        if (data.subtitle)
+            +e.subtitle !{data.subtitle} 

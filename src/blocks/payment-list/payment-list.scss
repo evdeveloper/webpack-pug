@@ -1,0 +1,31 @@
+.payment-list {
+    @include list-reset;
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: -12px;
+
+    &__item {
+        margin-right: 20px;
+        margin-bottom: 12px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        img {
+            width: auto;
+            max-width: 60px;
+        }
+    }
+}
+
+@media #{$tablet} {
+    .payment-list {
+        flex-wrap: nowrap;
+    }
+}
+
+@media #{$desktop} {
+    .payment-list {
+    }
+}

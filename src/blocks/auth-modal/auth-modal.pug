@@ -1,0 +1,52 @@
+include ../custom-input/custom-input
+include ../custom-checkbox/custom-checkbox
+
+mixin auth-modal()
+    .modal#authModal(aria-hidden="true")
+        +b.auth-modal
+            .modal__overlay(tabindex="-1" data-micromodal-close="")
+                .modal__dialog(role="dialog" aria-modal="true" aria-labelledby="authModalTitle" data-micromodal-close="")
+                    +e.steps
+                        +e.BUTTON.close.modal__close(aria-label="Закрыть окно" data-micromodal-close="")
+                            svg(id="close" viewBox="0 0 14 14" aria-label="Иконка")
+                                path(d="M.408 11.998c-.378.387-.395 1.072.009 1.468.404.395 1.081.386 1.468.009l4.992-4.993 4.983 4.993c.396.386 1.073.395 1.468-.01.396-.403.404-1.071.009-1.467L8.345 7.006l4.992-4.984a1.048 1.048 0 00-.009-1.467 1.065 1.065 0 00-1.468-.01L6.877 5.539 1.885.546C1.498.168.812.15.417.555.021.959.03 1.635.408 2.014L5.4 7.006.408 11.998z")
+                        +e.step.active#phoneStep
+                            +e.header
+                                +e.title#authModalTitle Войдите или зарегистрируйтесь, чтобы продолжить
+                            +e.FORM.form(action='/auth/phone.php')
+                                +e.row
+                                    +e.input
+                                        +custom-input({inputType:'text', id:'authPhone', name:'phone', label:'Телефон'})(data-validate='phone')
+                                +e.BUTTON.submit.btn.--orange Получить код
+                        +e.step#codeStep
+                            +e.header
+                                +e.title Введите код из смс
+                                +e.subtitle Укажите код подтверждения, отправленный на номер
+                                    span.js-entered-phone
+                            +e.FORM.form(action='/auth/phone-validate.php')
+                                +e.row
+                                    +e.input
+                                        +custom-input({inputType:'number', id:'authCode', name:'code', label:'Код из смс', required: true})(data-validate='text')
+                                +e.row
+                                    +e.input
+                                        +custom-checkbox({name: 'agree', id: 'authAgree', label: 'Ознакомлен и согласен с условиями <a href="#" target="_blank">обработки персональных данных.</a>', required: true})(checked='')
+                                +e.BUTTON.submit.btn.--orange Отправить
+                        +e.step#profileStep
+                            +e.header
+                                +e.title Заполните профиль
+                                +e.subtitle Для завершения регистрации необходимо заполнить следующие поля:
+                            +e.FORM.form(action='/auth/profile.php')
+                                +e.row
+                                    +e.input
+                                        +custom-input({inputType:'text', id:'authName', name:'name', label:'Имя', required: true})(data-validate='text')
+                                +e.row
+                                    +e.input
+                                        +custom-input({inputType:'text', id:'authSurname', name:'surname', label:'Фамилия', required: true})(data-validate='text')
+                                +e.row
+                                    +e.input
+                                        +custom-input({inputType:'email', id:'authEmail', name:'email', label:'Email', required: true})(data-validate='email')
+                                +e.row
+                                    +e.input
+                                        +custom-input({inputType:'text', id:'authBirthDay', name:'birthday', label:'Дата рождения', required: true})(data-validate='birthday')
+                                +e.BUTTON.submit.btn.--orange Завершить регистрацию
+                                +e.P.policy Нажимая на кнопку «Завершить регистрацию», Вы подтверждаете, что ознакомлены с #[a(href="/") политикой конфиденциальности]

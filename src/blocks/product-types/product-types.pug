@@ -1,0 +1,11 @@
+include ../type-card/type-card
+
+mixin product-types()
+    +b.SECTION.product-types
+        +inner
+            +e.header
+                +heading('Продукция')
+            +e.list
+                each card in productTypes
+                    +e.card
+                        +type-card(card)

@@ -1,0 +1,100 @@
+.product-counter {
+    width: 134px;
+    display: flex;
+    overflow: hidden;
+
+    &__control {
+        @include btn-reset;
+        position: relative;
+        width: 44px;
+        height: 44px;
+        flex: 0 0 auto;
+
+        cursor: pointer;
+
+        transition: color 300ms ease, background-color 300ms ease,
+            opacity 300ms ease;
+
+        &.disabled {
+            pointer-events: none;
+
+            &::before,
+            &::after {
+                opacity: 0.5;
+            }
+        }
+
+        &[data-action='minus'] {
+            border: 1px solid $theme-color;
+            border-radius: 8px 0 0 8px;
+
+            border-right: none;
+        }
+
+        &[data-action='plus'] {
+            border: 1px solid $theme-color;
+            border-radius: 0 8px 8px 0;
+
+            border-left: none;
+        }
+
+        &:hover {
+            background-color: $theme-color;
+
+            &::before,
+            &::after {
+                background-color: #fff;
+            }
+        }
+
+        &:focus-visible {
+            background-color: $theme-color;
+
+            &::before,
+            &::after {
+                background-color: #fff;
+            }
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 2px;
+            left: 50%;
+            top: 50%;
+
+            transform: translate(-50%, -50%);
+
+            background-color: $theme-color;
+
+            transition: background-color 300ms ease;
+        }
+
+        &::after {
+            display: none;
+        }
+
+        &[data-action='plus'] {
+            &::after {
+                display: block;
+
+                transform: translate(-50%, -50%) rotate(90deg);
+            }
+        }
+    }
+
+    &__current {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1 1 auto;
+
+        font-size: 16px;
+        line-height: 1;
+
+        border-top: 1px solid $theme-color;
+        border-bottom: 1px solid $theme-color;
+    }
+}

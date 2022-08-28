@@ -1,0 +1,130 @@
+.checkout-step.checkout-personal {
+
+    .phone-code {
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 120%;
+        color: #ffffff;
+
+        background: #003D73;
+        border: 1px solid #003D73;
+        border-radius: 8px;
+
+        width: 109px;
+        height: 34px;
+
+        &.disabled {
+            pointer-events: none;
+            opacity: 0.2;
+            color: #003D73;
+            background: transparent;
+            border: none;
+        }
+    }
+
+    .phone-input-block  {
+        min-width: 100%;
+    }
+
+    .code-input-block {
+        min-width: 60%;
+
+        &.disabled {
+            opacity: 0.2;
+            pointer-events: none;
+        }
+
+        &.verified {
+            opacity: 0.2;
+            pointer-events: none;
+
+            &:after {
+                color: #219653;
+                content: '✔';
+                position: absolute;
+                top: 25%;
+                right: 30px;
+            }
+        }
+    }
+
+    .get-code-btn {
+        min-width: 40%;
+    }
+
+    .code-input-timer {
+        position: absolute;
+        top: 1px;
+        right: 1px;
+
+        background: #FAFAFA;
+        border-radius: 8px;
+        padding: 15px;
+    }
+
+    .checkout-step__inputs-row {
+        align-items: center;
+    }
+
+    .private-policy-block {
+        color: #4F4F4F;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 150%;
+
+        padding: 0 8px;
+        margin-bottom: 16px;
+    }
+
+    .phone-check-result {
+        padding: 0 8px;
+        margin-bottom: 16px;
+    }
+
+    .phone-check-result-text {
+        color: #ffffff;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 120%;
+
+        background: #003D73;
+        border-radius: 8px;
+        padding: 8px 0;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media #{$tablet} {
+    .checkout-step.checkout-personal {
+
+    }
+}
+
+@media #{$desktop} {
+    .checkout-step.checkout-personal {
+
+        .phone-input-block  {
+            min-width: 50%;
+            flex: 0;
+            padding-right: 12px;
+        }
+
+        .code-input-block {
+            min-width: 29%;
+            flex: 0;
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+
+        .get-code-btn {
+            min-width: 20%;
+            flex: 0;
+            padding-left: 12px;
+        }
+
+        .private-policy-block {
+            margin-bottom: 24px;
+        }
+    }
+}

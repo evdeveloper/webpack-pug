@@ -1,0 +1,268 @@
+.products-pack {
+    padding: 48px 0;
+
+    &__wrapper {
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    &__description {
+        margin-bottom: 40px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+    }
+
+    &__header {
+        margin-bottom: 24px;
+    }
+
+    &__heading {
+        margin-bottom: 8px;
+
+        .heading {
+            margin: 0;
+
+            text-align: center;
+        }
+    }
+
+    &__subheading {
+        margin: 0;
+
+        text-align: center;
+        font-size: 14px;
+        line-height: 1.6;
+        font-weight: 400;
+    }
+
+    &__price {
+        margin-bottom: 24px;
+
+        text-align: center;
+    }
+
+    &__old-price {
+        margin: 0 0 8px;
+
+        font-size: 16px;
+        font-weight: 700;
+        color: $grey-200;
+        text-decoration: line-through;
+    }
+
+    &__new-price {
+        margin: 0;
+
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 1;
+    }
+
+    &__buy {
+        width: 100%;
+    }
+
+    &__controls {
+        position: relative;
+        z-index: 2;
+        width: 152px;
+        margin: 0 auto 24px;
+    }
+
+    &__counter {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        color: $text-color-dark;
+        font-weight: 700;
+        font-size: 14px;
+        text-align: center;
+        letter-spacing: 0.05em;
+    }
+
+    &__products-inner {
+        width: calc(100% + 48px);
+        margin-left: -24px;
+
+        &.flickity-resize {
+            .products-pack__product {
+                min-height: 100%;
+                display: flex;
+
+                .product-card {
+                    height: auto;
+
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+
+    &__product {
+        width: 100%;
+        padding: 0 24px;
+    }
+}
+
+@media #{$tablet} {
+    .products-pack {
+        padding: 64px 0;
+
+        &__wrapper {
+            max-width: none;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        &__description {
+            padding-top: 32px;
+            padding-bottom: 32px;
+            margin: 0;
+            padding-right: 32px;
+            width: 306px;
+            flex: 0 0 auto;
+        }
+
+        &__header {
+            margin-bottom: 32px;
+        }
+
+        &__heading {
+            .heading {
+                text-align: left;
+
+                &__title {
+                    font-size: 24px;
+                }
+            }
+        }
+
+        &__subheading {
+            text-align: left;
+        }
+
+        &__price {
+            text-align: left;
+        }
+
+        &__controls {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            margin: 0;
+        }
+
+        &__products {
+            position: relative;
+            flex: 1 1 auto;
+            margin: 0;
+        }
+
+        &__products-inner {
+            width: calc(100% + 32px);
+            margin-left: 0;
+            position: relative;
+
+            &.finished {
+                &::after {
+                    opacity: 0;
+                }
+            }
+
+            &.started {
+                &::before {
+                    opacity: 1;
+                }
+            }
+
+            &.full {
+                &::before,
+                &::after {
+                    opacity: 0;
+                }
+            }
+
+            &::before,
+            &::after {
+                content: '';
+                z-index: 1;
+                position: absolute;
+                width: 80px;
+                height: 100%;
+                top: 0;
+
+                opacity: 0;
+                pointer-events: none;
+
+                background-image: linear-gradient(
+                    90deg,
+                    rgba(whitesmoke, 0) 0% rgba(whitesmoke, 0.8) 20%,
+                    whitesmoke 100%
+                );
+                background-size: cover;
+
+                transition: opacity 300ms ease;
+            }
+
+            &::before {
+                left: 0;
+                transform: rotate(180deg);
+            }
+
+            &::after {
+                right: 0;
+
+                opacity: 1;
+            }
+        }
+
+        &__product {
+            width: 304px;
+            padding: 0;
+            padding-right: 32px;
+
+            &:last-child {
+                width: 336px;
+                padding-right: 64px;
+            }
+        }
+    }
+}
+
+@media #{$laptop} {
+    .products-pack {
+        &__description {
+            padding-right: 56px;
+            width: 330px;
+        }
+    }
+}
+
+@media #{$desktop} {
+    .products-pack {
+        padding: 80px 0;
+
+        &__description {
+            padding-right: 26px;
+            width: 296px;
+        }
+
+        &__products-inner {
+            width: 100%;
+        }
+
+        &__product {
+            width: 296px;
+            padding-right: 24px;
+
+            &:last-child {
+                width: 272px;
+                padding-right: 0;
+            }
+        }
+    }
+}

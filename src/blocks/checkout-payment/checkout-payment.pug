@@ -1,0 +1,11 @@
+mixin checkout-payment()
+    +b.checkout-step.checkout-payment
+        +e.body
+            +e.top
+                +e.header
+                    +e.H2.title Оплата
+                p Доступна только онлайн-оплата
+            +e.inputs
+                +e.inputs-row
+                    +e.input
+                        +custom-radio({name: 'paymentOnline', id: 'paymentOnline', label: 'Онлайн-оплата товара на сайте и онлайн-оплата доставки после подтверждения заказа оператором.'})(checked='')

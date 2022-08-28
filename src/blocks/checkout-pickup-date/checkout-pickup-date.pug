@@ -1,0 +1,16 @@
+include ../custom-input/custom-input
+include ../custom-select/custom-select
+
+mixin checkout-pickup-date()
+    +b.checkout-step.checkout-pickup-date.js-pickup-date
+        +e.body
+            +e.top
+                +e.header
+                    +e.H2.title Дата получения
+            +e.inputs
+                +e.inputs-row
+                    +e.input
+                        +custom-input({name: 'date', label: 'Выбранная дата', id: 'pickupDate', required: true})(pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}")
+                    +e.input
+                        +e.range
+                        +custom-select(cart.deliveryTimeSelect)(id='pickupTime' class='bordered disabled')

@@ -1,0 +1,27 @@
+
+include ../product-card/product-card
+
+mixin products-pack()
+    +b.SECTION.products-pack
+        +inner
+            +e.wrapper
+                +e.description
+                    +e.header
+                        +e.heading
+                            +heading('Эти товары вместе со&nbsp;скидкой')
+                        +e.subheading Общая стоимость выбранных товаров&nbsp;со&nbsp;скидкой
+                    +e.price
+                        +e.old-price 5 999 ₽
+                        +e.new-price 4 322,58 ₽
+                    +e.BUTTON.buy.btn.--orange(type='button' data-ids='1,2,3') В корзину комплектом
+                +e.controls
+                    +slider-controls
+                    +e.counter
+                        span.current 1
+                        | /
+                        span.total
+                +e.products
+                    +e.products-inner
+                        each product in packProducts
+                            +e.product
+                                +product-card(product)

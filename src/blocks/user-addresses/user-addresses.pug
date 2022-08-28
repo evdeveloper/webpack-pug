@@ -1,0 +1,20 @@
+include ../address-card/address-card
+include ../content-filter/content-filter
+
+mixin user-addresses()
+    +b.SECTION.user-addresses
+        +inner
+            +e.filter
+                +content-filter(filter)
+            +e.list
+                +e.card(data-id='1')
+                    +address-card(savedAddresses[0], 'account')
+                +e.card(data-id='1')
+                    +address-card(savedAddresses[1], 'account')
+                +e.card(data-id='2')
+                    +address-card(savedAddresses[2], 'account')
+                +e.card
+                    +e.BUTTON.add-new(type='button')
+                        .icon
+                            +icon('round-plus')
+                        | Добавить новый адрес

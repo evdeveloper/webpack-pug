@@ -1,0 +1,227 @@
+.delivery-address-modal {
+    &__body {
+        position: relative;
+        width: 100%;
+        max-width: 480px;
+        padding: 32px 24px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    &__tabs-nav {
+        display: flex;
+        flex-flow: row wrap;
+        margin-bottom: 8px;
+        padding-right: 24px;
+
+        button {
+            @include btn-reset;
+            margin-right: 16px;
+            margin-bottom: 16px;
+
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: $theme-color;
+            opacity: 0.5;
+
+            transition: opacity 300ms ease;
+
+            &.active,
+            &:hover {
+                opacity: 1;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &__tab {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+
+    &__form {
+        margin-bottom: 24px;
+        max-width: 480px;
+    }
+
+    &__title {
+        margin: 0 0 16px;
+        padding-right: 24px;
+
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    &__text {
+        margin: 0 0 24px;
+
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.6;
+    }
+
+    &__input {
+        margin-bottom: 16px;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__submit {
+        margin-bottom: 24px;
+        width: 100%;
+    }
+
+    &__not-found {
+        @include btn-reset;
+
+        font-size: 12px;
+        line-height: 1.5;
+        color: $text-color-grey;
+        text-decoration: underline;
+        text-align: left;
+
+        transition: color 300ms ease;
+
+        &:hover,
+        &:active,
+        &:focus {
+            color: $text-color-dark;
+        }
+    }
+
+    &__card {
+        margin-bottom: 20px;
+    }
+
+    &__pickup {
+        display: flex;
+        flex-flow: column nowrap;
+
+        .delivery-address-modal__map {
+            order: -1;
+            margin-bottom: 16px;
+        }
+    }
+
+    &__tip {
+        display: none;
+        margin: 32px 0 0;
+
+        font-size: 12px;
+        font-weight: 500;
+        color: $text-color-grey;
+        line-height: 1.4;
+    }
+
+    &__map {
+        height: 300px;
+        border-radius: 8px;
+        overflow: hidden;
+
+        background-color: $theme-color-light;
+
+        > div {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+@media #{$tablet} {
+    .delivery-address-modal {
+    }
+}
+
+@media #{$laptop} {
+    .delivery-address-modal {
+        &__body {
+            max-width: 1120px;
+            padding: 56px;
+        }
+
+        &__tabs-nav {
+            button {
+                margin-right: 32px;
+                margin-bottom: 24px;
+
+                font-size: 24px;
+            }
+        }
+
+        &__tab {
+            height: 526px;
+        }
+
+        &__delivery {
+            display: flex;
+            flex-flow: row nowrap;
+            height: 100%;
+        }
+
+        &__pickup {
+            flex-flow: row nowrap;
+            height: 100%;
+
+            .delivery-address-modal__map {
+                order: 2;
+            }
+        }
+
+        &__form,
+        &__cards {
+            width: 352px;
+            padding-right: 32px;
+            flex: 0 0 auto;
+            display: flex;
+            margin-bottom: 0;
+            flex-flow: column nowrap;
+        }
+
+        &__cards {
+            width: 368px;
+            max-height: 100%;
+            overflow-y: auto;
+            margin-top: -16px;
+            margin-left: -16px;
+
+            @include hideScrollbar;
+        }
+
+        &__cards-inner {
+            padding-left: 16px;
+            padding-top: 16px;
+        }
+
+        &__tips {
+            margin-top: auto;
+        }
+
+        &__map {
+            width: 50%;
+            flex: 1 1 auto;
+            height: auto;
+        }
+    }
+}
+
+@media #{$desktop} {
+    .delivery-address-modal {
+        &__form {
+            width: 376px;
+            padding-right: 56px;
+        }
+
+        &__cards {
+            width: 392px;
+            padding-right: 24px;
+        }
+    }
+}

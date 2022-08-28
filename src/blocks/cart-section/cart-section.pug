@@ -1,0 +1,23 @@
+include ../banner-card/banner-card
+include ../cart-info/cart-info
+include ../cart-product/cart-product
+include ../cart-checkout/cart-checkout
+
+mixin cart-section()
+    +b.SECTION.cart-section
+        +inner
+            +e.wrapper
+                +e.main
+                    // .cart-section__empty Вы пока ничего не добавили в корзину
+                    +e.products
+                        each product in cart.products
+                            +e.product
+                                +cart-product(product)
+                    +e.checkout
+                        +cart-checkout
+                +e.ASIDE.aside
+                    +e.banners
+                        +e.banner
+                            +banner-card(cart.banner)
+                    +e.info
+                        +cart-info

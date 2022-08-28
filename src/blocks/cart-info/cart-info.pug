@@ -1,0 +1,36 @@
+mixin cart-info()
+    +b.cart-info
+        +e.block
+            +e.row
+                +e.label Товары
+                +e.value 13 968, 54 ₽
+            +e.row
+                +e.label Вес
+                +e.value 12,5 кг.
+            +e.row
+                +e.label Промокод
+                +e.value.--negative - 560, 78 ₽
+            +e.row
+                +e.label Скидка
+                +e.value - 52 ₽
+        +e.block
+            +e.row
+                +e.label Стоимость подъема
+                    button.tip(type='button' title='Таблица расчета стоимоcти' data-modal='elevationTariffsModal') ?
+                +e.value 50 ₽
+            +e.row
+                +e.label Стоимость доставки
+                    +e.SPAN.label-note На первые 3 заказа
+                +e.value.--positive бесплатно
+        +e.block
+            +e.promocodes
+                +e.promocode
+                    +custom-input({name: 'promocodes[]', placeholder: 'Введите промокод'})
+                        +e.success промокод применен
+                    +e.BUTTON.promocode-remove
+                        +icon('close')
+            +e.BUTTON.add-promocode(type='button') + у меня есть еще промокод
+        +e.result
+            +e.label Общая стоимость
+            +e.value 713 768,55 ₽
+        +e.BUTTON.submit.btn.--orange(type='submit' form='cartCheckoutForm') Оформить заказ

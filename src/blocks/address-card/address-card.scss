@@ -1,0 +1,163 @@
+.address-card {
+    min-height: 220px;
+    position: relative;
+    padding: 24px;
+    padding-top: 48px;
+    display: flex;
+    flex-flow: column nowrap;
+
+    border: 1px solid transparent;
+    background-color: #fafafa;
+    // background-color: $theme-color;
+    border-radius: 8px;
+    background-image: url(../assets/images/cock-theme.svg);
+    background-size: auto;
+    background-position: top right;
+    background-repeat: no-repeat;
+
+    transition: border-color 300ms ease;
+
+    cursor: pointer;
+
+    -webkit-tap-highlight-color: transparent;
+
+    &:hover {
+        border-color: $secondary-color;
+    }
+
+    &__actions {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        display: flex;
+
+        transition: opacity 300ms ease;
+    }
+
+    &__action {
+        @include btn-reset;
+        position: relative;
+        width: 24px;
+        height: 24px;
+        margin-right: 16px;
+
+        border-radius: 50%;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        svg {
+            position: absolute;
+            width: 96%;
+            height: 96%;
+            top: 0;
+            left: 0;
+
+            pointer-events: none;
+
+            fill: $theme-color;
+        }
+    }
+
+    &__title {
+        margin: 0 0 48px;
+
+        color: $secondary-color;
+        font-size: 16px;
+        line-height: 1.6;
+        font-weight: 700;
+    }
+
+    &__address {
+        margin-top: auto;
+        margin-bottom: 24px;
+
+        font-size: 16px;
+        line-height: 1.6;
+        font-weight: 700;
+    }
+
+    &__link {
+        align-self: flex-start;
+
+        color: $text-color-grey;
+        text-decoration: underline;
+        font-size: 14px;
+        line-height: 1.6;
+
+        transition: opacity 300ms ease;
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+
+    &__select {
+        align-self: flex-start;
+    }
+
+    &__delete {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: none;
+
+        background-color: #fafafa;
+        border-radius: 8px;
+        background-image: url(../assets/images/cock-theme.svg);
+        background-size: auto;
+        background-position: top right;
+        background-repeat: no-repeat;
+    }
+
+    &__delete-inner {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__delete-title {
+        margin: 0 0 8px;
+
+        color: $secondary-color;
+        font-size: 16px;
+        line-height: 1.5;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    &__delete-address {
+        margin: 0 auto 24px;
+        max-width: 240px;
+
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    &__delete-actions {
+        display: flex;
+        justify-content: center;
+
+        > button {
+            margin: 0 8px;
+        }
+    }
+}
+
+@media #{$tablet} {
+    .address-card {
+    }
+}
+
+@media #{$desktop} {
+    .address-card {
+    }
+}

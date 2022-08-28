@@ -1,0 +1,20 @@
+include ../slider-controls/slider-controls
+include ../testimonial-card/testimonial-card
+
+mixin testimonials-slider(title, testimonials)
+    +b.SECTION.testimonials-slider
+        +inner
+            +e.wrapper
+                +e.header
+                    +e.H2.title
+                        a(href='./testimonials-page.html')
+                            | Отзывы о товаре
+                    +e.controls
+                        +slider-controls
+                +e.slider
+                    each card in testimonials
+                        +e.slide
+                            +testimonial-card(card, true)
+                                | !{card.text}
+                +e.footer
+                    +e.BUTTON.trigger.btn.--orange.js-trigger-testimonial-form(type='button') Оставить отзыв

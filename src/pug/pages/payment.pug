@@ -1,0 +1,33 @@
+extends ../page-layout
+
+include ../../blocks/sub-nav/sub-nav
+include ../../blocks/content-section/content-section
+
+block variables
+    -const pageTitle = 'Оформление заказа и оплата'
+
+block head
+
+block content
+    +sub-nav(0, devNav.infoPages)
+    +content-section
+        p Оформить заказ на сайте shop.severnaya.ru Вы можете в любое удобное для Вас время.
+        p Для оформления заказа не требуется регистрация. Все необходимые данные Вы сможете ввести в форме заказа или дополнить по телефону при общении с менеджером магазина.
+        p Оплата производится через платёжный шлюз АО «АЛЬФА-БАНК».
+        p Оплатить Товар можно прямо на сайте shop.severnaya.ru. Если возникли трудности с оплатой, то свяжитесь, пожалуйста, с оператором магазина по телефону <a href='tel: +7 (812) 565-01-07' style='white-space: nowrap'>+7 (812) 565-01-07</a> или через почту <a href='mailto: shop@severnaya.ru'>shop@severnaya.ru</a>
+        p Принимаются банковские карты следующих типов:
+        +e.images
+            +e.image
+                +img(`payment-list/icon3_big.svg`, true)
+            +e.image
+                +img(`payment-list/icon4_big.svg`, true)
+            +e.image
+                +img(`payment-list/icon5_big.svg`, true)
+        p Так же Товар можно оплатить через системы «Google Pay» или «Apple pay»:
+        +e.images
+            +e.image
+                +img(`payment-list/icon1_big.svg`, true)
+            +e.image
+                +img(`payment-list/icon2_big.svg`, true)
+        p Подробнее, как работают эти системы можно посмотреть на страницах — <a href='https://support.apple.com/ru-ru/HT204506' target='_blank'>support.apple.com/ru-ru/HT204506</a> и <a href='https://support.google.com/pay/answer/7625055?co=GENIE.Platform%3DAndroid&hl=ru' target='_blank' style='word-wrap: break-word;'>support.google.com/pay/answer/7625055</a>
+        p Заказ размещается на производство и доставку только после 100% предоплаты за Товар и <a href='delivery-page.html'>Доставку</a>

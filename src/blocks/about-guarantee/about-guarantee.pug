@@ -1,0 +1,9 @@
+mixin about-guarantee(data)
+    +b.LI.guaranty-card(data-id=data.id)
+        +e.wrapper.animate
+            +e.header
+                +e.image
+                    +img(data.image, true)
+            +e.body
+                +e.H3.title !{data.name}
+                +e.SPAN.text подробнее

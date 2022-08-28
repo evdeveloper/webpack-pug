@@ -1,0 +1,142 @@
+.btn {
+    padding: 16px 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    color: $text-color-white;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+    text-align: center;
+
+    background-color: $theme-color;
+    border: 1px solid $theme-color;
+    box-shadow: none;
+    cursor: pointer;
+    border-radius: 16px;
+
+    outline: none;
+
+    transition: background-color 300ms ease, color 300ms ease;
+
+    &:hover,
+    &:active {
+        background-color: #fff;
+        color: $theme-color;
+    }
+
+    &:focus-visible {
+        box-shadow: 0 0 0 1px $text-color-white, 0 0 0 2px $theme-color;
+    }
+
+    &--transparent {
+        border-color: $theme-color;
+        background-color: transparent;
+
+        color: $theme-color;
+
+        transition: background-color 300ms ease, color 300ms ease;
+
+        &:hover,
+        &:active {
+            background-color: $theme-color;
+            color: $text-color-white;
+        }
+    }
+
+    &--orange {
+        background-color: $secondary-color;
+        border-color: $secondary-color;
+
+        &:hover,
+        &:active {
+            background-color: #fff;
+            color: $secondary-color;
+        }
+
+        &.btn--transparent {
+            border-color: $secondary-color;
+            background-color: transparent;
+
+            color: $secondary-color;
+
+            transition: background-color 300ms ease, color 300ms ease;
+
+            &:hover,
+            &:active {
+                background-color: $secondary-color;
+                color: $text-color-white;
+            }
+        }
+    }
+
+    &--accent {
+        background-color: $accent-color;
+        border-color: $accent-color;
+
+        &:hover,
+        &:active {
+            background-color: #fff;
+            color: $accent-color;
+        }
+
+        &.btn--transparent {
+            border-color: $accent-color;
+            background-color: transparent;
+
+            color: $accent-color;
+
+            transition: background-color 300ms ease, color 300ms ease;
+
+            &:hover,
+            &:active {
+                background-color: $accent-color;
+                color: $text-color-white;
+            }
+        }
+    }
+
+    &--medium {
+        padding: 10px 32px;
+    }
+
+    &--small {
+        padding: 8px 24px;
+
+        font-size: 12px;
+
+        border-radius: 8px;
+    }
+
+    // &--light {
+    //     color: $text-color-light;
+
+    //     background-color: #fff;
+
+    //     transition: color 300ms ease, background-color 300ms ease;
+
+    //     &:hover,
+    //     &:active,
+    //     &:focus-visible {
+    //         color: $text-color;
+
+    //         background-color: $theme-color;
+    //     }
+    // }
+
+    &.disabled,
+    &:disabled {
+        opacity: 0.5;
+        cursor: initial;
+
+        pointer-events: none;
+
+        // &:hover,
+        // &:active,
+        // &:focus {
+        //     opacity: 0.5;
+        // }
+    }
+}

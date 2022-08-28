@@ -1,0 +1,23 @@
+include ../category-card/category-card
+
+mixin product-categories()
+    +b.SECTION.product-categories
+        +inner
+            +e.block
+                +e.header
+                    +heading('Охлажденная курица')
+                    +e.icon
+                        +icon('round-plus')
+                +e.list
+                    each card in productCategories[0]
+                        +e.card
+                            +category-card(card)
+            +e.block
+                +e.header
+                    +heading('Полуфабрикаты премиум')
+                    +e.icon
+                        +icon('round-plus')
+                +e.list
+                    each card in productCategories[1]
+                        +e.card
+                            +category-card(card)

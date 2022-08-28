@@ -1,0 +1,102 @@
+.faq-section {
+    &__block {
+        border-top: 1px solid $border-color;
+        margin-bottom: 12px;
+
+        &:last-child {
+            border-bottom: 1px solid $border-color;
+            margin-bottom: 0;
+        }
+    }
+
+    &__question {
+        @include btn-reset;
+        position: relative;
+        width: 100%;
+        padding: 24px 16px;
+        padding-right: 60px;
+
+        background-color: $grey-100;
+
+        color: $text-color;
+        text-align: left;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 1.75;
+
+        cursor: pointer;
+
+        &:focus-visible {
+            outline: 2px solid $text-color;
+        }
+
+        .icon {
+            position: absolute;
+            width: 40px;
+            height: 32px;
+            top: 24px;
+            right: 16px;
+
+            transition: transform 300ms ease;
+
+            cursor: pointer;
+
+            // will-change: transform;
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                width: 20px;
+                height: 2px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                background-color: currentColor;
+            }
+
+            &::after {
+                transform: translate(-50%, -50%) rotate(-90deg);
+            }
+
+            @include real-hover {
+                transform: scale(1.2);
+            }
+
+            &:active,
+            &:focus {
+                transform: scale(1);
+            }
+        }
+
+        &.active {
+            background-color: #fff;
+
+            .icon {
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    &__answer {
+        display: none;
+        padding: 0 16px 32px;
+
+        background-color: #fff;
+
+        &.opened {
+            display: block;
+        }
+    }
+}
+
+@media #{$tablet} {
+    .faq-section {
+    }
+}
+
+@media #{$desktop} {
+    .faq-section {
+    }
+}

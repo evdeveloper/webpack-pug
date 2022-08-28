@@ -1,0 +1,48 @@
+.up-button {
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    pointer-events: all;
+    cursor: pointer;
+    background-color: #f0af13;
+    border-radius: 50px;
+    -webkit-transition: opacity 300ms ease;
+    transition: opacity 300ms ease;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9;
+    &.active {
+        opacity: 1;
+        pointer-events: initial;
+    }
+    svg {
+        position: absolute;
+        width: 15px;
+        height: 13px;
+        top: 50%;
+        left: 50%;
+        transform: rotate(90deg) translate(-50%, 50%);
+        fill: #ffffff;
+    }
+}
+
+@media #{$tablet} {
+    .up-button {
+        right: 50px;
+        bottom: 50px;
+    }
+}
+
+@media #{$smallDesktop} {
+    .up-button {
+        bottom: 20px;
+    }
+}

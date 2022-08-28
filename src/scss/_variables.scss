@@ -1,0 +1,32 @@
+$tablet: '(min-width: 768px)';
+$laptop: '(min-width: 1024px)';
+$desktop: '(min-width: 1280px)';
+$smallDesktop: '(min-width: 1280px) and (max-width: 1440px)';
+
+$font: 'TT Wellingtons', Helvetica, Arial, sans-serif;
+
+$theme-color: #003d73;
+$theme-color-medium: rgba(#003d73, 0.8);
+$theme-color-light: rgba(#003d73, 0.5);
+
+$secondary-color: #f0af13;
+
+$text-color: $theme-color;
+$text-color-dark: #000;
+$text-color-grey: #333;
+$text-color-white: #ffffff;
+$text-color-light: #f2f5f8;
+
+$darkbg: #0f1b2a;
+
+$border-color: #f3f3f3;
+
+$grey-700: #4d4d4d;
+$grey-500: #707070;
+$grey-300: #828282;
+$grey-200: #bdbdbd;
+$grey-100: #ededed;
+
+$green: #219653;
+
+$accent-color: #eb5757;

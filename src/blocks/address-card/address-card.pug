@@ -1,0 +1,22 @@
+mixin address-card({title, address}, type)
+    +b.address-card
+        if (type === 'account')
+            +e.actions
+                +e.BUTTON.action(type='button' data-action='edit' title='Редактировать')
+                    +icon('edit-icon')
+                +e.BUTTON.action(type='button' data-action='delete' title='Удалить')
+                    +icon('delete-icon')
+        +e.title !{title}
+        +e.address !{address}
+        if (type === 'account')
+            +e.A.link(href='#') Список заказов по адресу
+        if (type === 'cart')
+            +e.BUTTON.select.btn.--orange(type='button') Выбрать адрес
+        if (type === 'account')
+            +e.delete
+                +e.delete-inner
+                    +e.delete-title Удалить адрес?
+                    +e.delete-address !{address}
+                    +e.delete-actions
+                        +e.BUTTON.delete-confirm.btn.--orange.--medium(type='button') Да
+                        +e.BUTTON.delete-cancel.btn.--orange.--transparent.--medium(type='button') Нет

@@ -1,0 +1,6 @@
+mixin payment-list()
+    -const usedIconsIds = [1, 2, 3, 4, 5]
+    +b.UL.payment-list
+        each id in usedIconsIds
+            +e.item
+                +img(`payment-list/icon${id}.svg`, true)

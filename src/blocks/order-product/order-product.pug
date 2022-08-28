@@ -1,0 +1,11 @@
+mixin order-product(data)
+    +b.ARTICLE.order-product
+        +e.image
+            +img(data.image, true)
+        +e.data
+            +e.main
+                +e.title !{data.title}
+                +e.subtitle !{data.subtitle}
+            +e.footer
+                +e.amount !{data.amount}
+                +e.price !{data.price}

@@ -1,0 +1,51 @@
+include ../order-product/order-product
+include ../custom-input/custom-input
+include ../photos-upload/photos-upload
+
+mixin order-card(data)
+    +b.order-card
+        +e.header(tabindex='0')
+            +e.status(class=data.status) !{data.statusLabel}
+            +e.title !{data.title}
+            +e.payment
+                +e.price !{data.price}
+                if (data.paymentStatus)
+                    +e.payment-status !{data.paymentStatus}
+            +e.icon
+                +icon('chevron')
+        +e.info
+            +e.info-row
+                +e.info-col
+                    +e.info-title Детали заказа:
+                    +e.details
+                        each row in data.info.details
+                            +e.details-row
+                                +e.details-label !{row.label}
+                                +e.details-value(class=row.modifier) !{row.value}
+                    +e.FORM.feedback(action='order-feedback.php')
+                        +e.info-title Оставить комментарий к заказу
+                        +e.comment
+                            +custom-input({inputType: 'textarea', id: 'orderComment', name: 'orderComment', placeholder: 'Пишите только хорошее'})(rows='3')
+                        +e.feedback-upload
+                            +photos-upload
+                        +e.BUTTON.submit.btn(type='button') Отправить
+                        +e.P.policy
+                            | Нажимая на кнопку «Отправить», Вы подтверждаете,
+                            | что ознакомлены с <a target="_blank" href="/upload/policy.pdf">политикой конфиденциальности</a>,
+                            | ознакомлены с <a download="" href="/upload/public.doc">договором публичной оферты</a>,
+                            | согласны на обработку персональных данных
+
+                +e.info-col
+                    +e.info-title Состав заказа:
+                    +e.products
+                        each product in data.info.products
+                            +e.product
+                                +order-product(product)
+                    +e.alert Стоимость некоторых товаров могла измениться
+                    if (data.status === 'draft')
+                        +e.A.action.btn.btn--orange(href='./cart-page.html') Оформить заказ
+                    if (data.status === 'planned' || data.status === 'courier')
+                        +e.A.action.btn.btn--accent.--transparent(href='./cart-page.html') Отменить
+                        +e.A.action.btn.btn--orange(href='./cart-page.html') Повторить заказ
+                    if (data.status === 'cancelled' || data.status === 'done' || data.status === 'refunded')
+                        +e.A.action.btn.btn--orange(href='./cart-page.html') Повторить заказ

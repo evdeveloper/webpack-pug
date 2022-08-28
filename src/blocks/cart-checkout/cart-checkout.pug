@@ -1,0 +1,14 @@
+include ../checkout-personal/checkout-personal
+include ../checkout-date/checkout-date
+include ../checkout-pickup-date/checkout-pickup-date
+include ../checkout-delivery/checkout-delivery
+include ../checkout-address/checkout-address
+include ../checkout-payment/checkout-payment
+
+mixin cart-checkout()
+    +b.FORM.cart-checkout#cartCheckoutForm
+        +checkout-personal
+        +checkout-delivery
+        +checkout-address
+        +checkout-date
+        +checkout-pickup-date

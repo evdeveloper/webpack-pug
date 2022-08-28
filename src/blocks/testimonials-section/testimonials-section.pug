@@ -1,0 +1,24 @@
+include ../testimonial-card/testimonial-card
+
+mixin testimonials-section()
+    +b.SECTION.testimonials-section
+        +inner
+            +e.wrapper
+                +e.list
+                    each card in testimonials.company
+                        +e.item
+                            +testimonial-card(card)
+                                | !{card.text}
+                    +e.appeal
+                        +e.appeal-content
+                            +e.H3.appeal-title Оставить отзыв
+                            +e.P.appeal-text Мы стремимся повышать качества нашей продукции и услуг, поэтому нам вам каждый отзыв.
+                            +e.BUTTON.appeal-trigger.btn.--orange.js-trigger-testimonial-form(type='button') Оставить отзыв
+                        +e.appeal-image
+                            +img('testimonials-section/appeal.svg', true)
+                    each card in testimonials.company
+                        +e.item
+                            +testimonial-card(card)
+                                | !{card.text}
+                +e.actions
+                    +e.BUTTON.more.btn(type='button') Показать еще

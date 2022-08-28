@@ -1,0 +1,20 @@
+mixin header-search()
+    +b.header-search
+        +e.overlay
+        +e.body
+            +e.inner
+                +e.FORM.form(autocomplete='off' action='/search.php' data-url='' method='get')
+                    +e.INPUT.input(type='search' name='search' placeholder='Что вы ищете?')
+                    +e.BUTTON.reset(type='reset')
+                        +icon('close-circle')
+                    +e.BUTTON.sumbit.btn.--orange.--small(type='submit') Поиск
+                +e.result
+                    +e.result-container
+                        +e.A.card(href='./product-page.html')
+                            | Набор для тушения охлажденный. Коробка 5/15кг
+                        +e.A.card(href='./product-page.html')
+                            | Набор для тушения охлажденный. Коробка 5/15кг
+                        +e.A.card(href='./product-page.html')
+                            | Набор для тушения охлажденный. Коробка 5/15кг
+                        +e.A.card(href='./product-page.html')
+                            | Набор для тушения охлажденный. Коробка 5/15кг

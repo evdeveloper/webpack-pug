@@ -1,0 +1,44 @@
+.sales-section {
+    padding: 48px 0;
+
+    &__list {
+        margin-bottom: -32px;
+    }
+
+    &__card {
+        max-width: 400px;
+        margin: 0 auto;
+        padding-bottom: 32px;
+    }
+}
+
+@media #{$tablet} {
+    .sales-section {
+        padding: 64px 0;
+
+        &__list {
+            display: flex;
+            flex-flow: row wrap;
+            margin: 0 -16px -32px;
+        }
+
+        &__card {
+            width: 50%;
+            max-width: none;
+            flex: 0 0 auto;
+            padding: 0 16px 32px;
+            margin: 0;
+        }
+    }
+}
+
+@media #{$laptop} {
+    .sales-section {
+    }
+}
+
+@media #{$desktop} {
+    .sales-section {
+        padding: 80px;
+    }
+}

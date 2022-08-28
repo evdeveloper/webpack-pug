@@ -1,0 +1,4 @@
+mixin content-filter(data)
+    +b.content-filter
+        each btn, index in data
+            +e.BUTTON.btn(type='button' data-id=btn.id class=(index === 0) ? 'active' : '') !{btn.label}

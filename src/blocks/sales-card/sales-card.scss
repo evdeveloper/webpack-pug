@@ -1,0 +1,142 @@
+.sales-card {
+    position: relative;
+    width: 100%;
+    min-height: 320px;
+    padding: 24px 16px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+
+    color: $text-color-white;
+    text-decoration: none;
+    border-radius: 8px;
+    overflow: hidden;
+
+    will-change: transform; //magic for safari
+
+    &:hover {
+        .sales-card__background {
+            transform: scale(1.1);
+        }
+    }
+
+    &__background {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+
+        background-size: cover;
+        background-position: bottom right;
+        background-color: $theme-color-light;
+
+        transition: transform 500ms ease-in-out;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+
+            background-image: linear-gradient(
+                to bottom,
+                rgba($theme-color, 0.4),
+                rgba($theme-color, 0.4)
+            );
+        }
+    }
+
+    &__content {
+        position: relative;
+        z-index: 2;
+        margin-bottom: 32px;
+    }
+
+    &__title {
+        display: block;
+        margin-bottom: 16px;
+
+        color: $text-color-white;
+        font-size: 18px;
+        line-height: 1.5;
+        font-weight: 700;
+        text-decoration: none;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__subtitle {
+        margin: 0;
+
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.5;
+    }
+
+    &__link {
+        position: relative;
+        z-index: 2;
+        align-self: flex-start;
+    }
+}
+
+@media #{$tablet} {
+    .sales-card {
+        height: 100%;
+        min-height: 400px;
+        padding: 32px 24px;
+
+        &__title {
+            font-size: 24px;
+        }
+    }
+}
+
+@media #{$laptop} {
+    .sales-card {
+        &:hover {
+            .sales-card__content {
+                transform: translateY(0);
+            }
+
+            .sales-card__link {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        &__content {
+            transform: translateY(40px);
+
+            transition: transform 500ms ease;
+        }
+
+        &__link {
+            transform: translateY(10px);
+            opacity: 0;
+
+            transition: transform 500ms ease, opacity 500ms ease,
+                background-color 300ms ease;
+        }
+    }
+}
+
+@media #{$desktop} {
+    .sales-card {
+    }
+}

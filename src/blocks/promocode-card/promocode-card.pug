@@ -1,0 +1,10 @@
+mixin promocode-card(data)
+    +b.promocode-card(class=data.used ? 'used' : '')
+        if (data.used)
+            +e.status Применен
+        +e.subtitle !{data.validTo}
+        +e.title !{data.title}
+        +e.P.description !{data.description}
+        +e.BUTTON.copy.btn.--transparent(type='button')
+            | SUMMER21
+            +icon('copy')

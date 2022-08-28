@@ -1,0 +1,36 @@
+include ../main-nav/main-nav
+include ../mobile-nav/mobile-nav
+include ../hamburger/hamburger
+include ../header-search/header-search
+include ../header-marquee/header-marquee
+
+mixin main-header(mod = '')
+    +header-marquee()
+    +b.HEADER.main-header.--has-marquee(class=mod)
+        +inner
+            +e.row
+                +e.A.logo(href='./')
+                    +img('logo.svg')( data-fixed-src='logo-fixed.svg' width='120' alt='Северная Птицефабрика')
+                    +img('logo-fixed.svg')(class="mobile")
+                +e.column.--left
+                    +e.address
+                        | Адрес доставки:
+                        button.js-address-change(type='button') Лиговский, 140
+                    +e.menu
+                        +main-nav(mod)
+                    +e.search
+                        +header-search
+                    +e.A.phone.--tablet(href='tel:+7 (812) 339-30-06') +7 (812) 339-30-06
+                +e.column.--right
+                    +e.A.phone(href='tel:+7 (812) 339-30-06') +7 (812) 339-30-06
+                    +e.actions
+                        +e.BUTTON.action.js-auth-trigger
+                            +icon('account')
+                        +e.BUTTON.action.js-search-trigger
+                            +icon('search')
+                        +e.A.action(href='cart-page.html')
+                            +icon('cart_new')
+                            +e.SPAN.counter.js-cart-counter 3
+                +e.hamburger
+                    +hamburger
+    +mobile-nav

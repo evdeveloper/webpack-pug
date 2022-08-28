@@ -1,0 +1,47 @@
+include ../custom-input/custom-input
+include ../custom-checkbox/custom-checkbox
+include ../custom-radio/custom-radio
+include ../autocomplete-dropdown/autocomplete-dropdown
+
+mixin checkout-address()
+    +b.checkout-step.checkout-address
+        +e.body
+            +e.top
+                +e.header
+                    +e.H2.title Ваши данные
+                    +e.BUTTON.action.btn.--transparent.js-trigger-addresses(type='button') Выбрать из сохраненных
+            +e.inputs
+                +e.inputs-row
+                    +e.input
+                        +custom-checkbox({name: 'saveAdress', id: 'saveAddess', label: 'Сохранить в моих адресах'})
+            +e.inputs
+                +e.inputs-row
+                    +e.input
+                        +custom-input({name: 'city', label: 'Населенный пункт', id: 'deliveryCity', required: true})(data-validate='text')
+                +e.inputs-row
+                    +e.input
+                        +custom-input({name: 'street', label: 'Улица', id: 'deliveryStreet', required: true})(data-validate='text')
+                +e.inputs-row
+                    +e.input.--small
+                        +custom-input({name: 'house', label: 'Дом', id: 'deliveryHouse', required: true})(data-validate='text')
+                    +e.input.--small
+                        +custom-input({name: 'appartment', label: 'Квартира', id: 'deliveryAppartment', required: true})(data-validate='text')
+                    +e.input.--small
+                        +custom-input({name: 'entryphone', label: 'Домофон', id: 'deliveryEntryphone'})
+            +e.inputs
+                +e.inputs-row
+                    +e.input
+                        +custom-radio({name: 'deliveryType', id: 'elevationChoice', label: 'Подъем до квартиры'})(data-delivery='elevation')
+                        +e.dropdown-inputs.js-elevation-inputs
+                            +e.inputs-row.--center
+                                +e.input.--small.--no-grow
+                                    +custom-input({name: 'floor', label: 'Этаж', id: 'deliveryFloor'})
+                                +e.input.--no-shrink
+                                    +custom-checkbox({name: 'hasElevator', id: 'hasElevator', label: 'Есть&nbsp;лифт'})
+                +e.inputs-row
+                    +e.input
+                        +custom-radio({name: 'deliveryType', id: 'entranceChoice', label: 'Доставка до парадной (проходной/перегрузить в другое ТС)'})(checked='' data-delivery='entrance')
+        +e.footer
+            | Стоимость подъема оплачивается отдельно от доставки согласно
+            |
+            button(type='button' data-modal='elevationTariffsModal') тарифам

@@ -1,0 +1,8 @@
+mixin page-header(title, title_special = '')
+    +b.page-header
+        +e.background
+            +picture-helper({desktop: "page-header/bg.svg", tablet: "page-header/bg_tablet.svg", mobile: "page-header/bg_mobile.svg"})
+        +inner
+            if (title)
+                +e.H1.title !{title}
+            block

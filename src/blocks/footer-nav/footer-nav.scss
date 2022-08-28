@@ -1,0 +1,49 @@
+.footer-nav {
+    display: flex;
+    max-width: 340px;
+    justify-content: space-between;
+
+    &__list {
+        @include list-reset;
+        padding-right: 16px;
+
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+
+    &__item {
+        margin-bottom: 16px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__link {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1.6;
+        color: $theme-color;
+        text-decoration: none;
+
+        transition: opacity 300ms ease;
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}
+
+@media #{$tablet} {
+    .footer-nav {
+        &__list {
+            padding-right: 50px;
+        }
+    }
+}
+
+@media #{$desktop} {
+    .footer-nav {
+    }
+}

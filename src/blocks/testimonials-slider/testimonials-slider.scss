@@ -1,0 +1,138 @@
+.testimonials-slider {
+    padding-top: 24px;
+    padding-bottom: 48px;
+
+    &__wrapper {
+        position: relative;
+        padding: 32px 16px;
+
+        background-color: #fff;
+        border-radius: 16px;
+    }
+
+    &__header {
+        padding: 0 8px;
+        margin-bottom: 8px;
+    }
+
+    &__title {
+        margin: 0;
+
+        font-size: 18px;
+        line-height: 1.6;
+        font-weight: 700;
+
+        a {
+            color: inherit;
+            text-decoration: none;
+
+            transition: color 300ms ease;
+
+            &:hover {
+                color: $secondary-color;
+            }
+        }
+    }
+
+    &__slider {
+        width: calc(100% + 32px);
+        margin-left: -16px;
+        margin-bottom: -16px;
+
+        .flickity-viewport {
+            transition: height 300ms ease;
+            will-change: height;
+        }
+    }
+
+    &__slide {
+        margin-right: 24px;
+        width: 100%;
+        padding: 16px;
+    }
+
+    &__controls {
+        position: absolute;
+        width: 96px;
+        bottom: 110px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: center;
+        margin-top: 90px;
+    }
+}
+
+@media #{$tablet} {
+    .testimonials-slider {
+        padding-top: 32px;
+        padding-bottom: 48px;
+
+        &__wrapper {
+            padding: 40px;
+        }
+
+        &__header {
+            display: flex;
+            justify-content: space-between;
+            padding: 0;
+            margin-bottom: 16px;
+        }
+
+        &__title {
+            font-size: 24px;
+        }
+
+        &__controls {
+            position: static;
+            transform: none;
+        }
+
+        &__slider {
+            width: calc(100% + 80px);
+            margin-left: -40px;
+        }
+
+        &__slide {
+            padding: 16px 40px;
+            margin-right: 0;
+        }
+
+        &__footer {
+            margin-top: 36px;
+        }
+    }
+}
+
+@media #{$laptop} {
+    .testimonials-slider {
+        padding-top: 40px;
+        padding-bottom: 64px;
+
+        &__slider {
+            width: calc(100% + 24px);
+            margin-left: -12px;
+
+            &.flickity-resize {
+                .testimonials-slider__slide {
+                    min-height: 100%;
+                    display: flex;
+                }
+            }
+        }
+
+        &__slide {
+            width: 50%;
+            padding: 16px 12px;
+            margin: 0;
+        }
+    }
+}
+
+@media #{$desktop} {
+    .testimonials-slider {
+    }
+}

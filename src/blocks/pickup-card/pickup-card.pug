@@ -1,0 +1,9 @@
+mixin pickup-card(data)
+    +b.pickup-card
+        +e.index !{data.index}
+        +e.content
+            +e.block Адрес: !{data.address}
+            +e.block Телефон: <br> !{data.phone}
+            +e.block Время работы выдачи товаров интернет-магазина птицефабрики «Северная»: <br>ПН-ПТ, ВС 14:00 до 22:00
+            +e.block
+                b Суббота – выдачи нет

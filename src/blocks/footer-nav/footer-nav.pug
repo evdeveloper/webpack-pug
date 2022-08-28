@@ -1,0 +1,7 @@
+mixin footer-nav()
+    +b.NAV.footer-nav
+        each list in footerNav
+            +e.UL.list
+                each item in list
+                    +e.item
+                        +e.A.link(href=item.link) !{item.text}

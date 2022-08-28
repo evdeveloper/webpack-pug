@@ -1,0 +1,19 @@
+include ../product-counter/product-counter
+
+mixin cart-product(data)
+    +b.ARTICLE.cart-product(data-id='3')
+        +e.BUTTON.remove(type='button' title='Удалить из корзины')
+            +icon('close')
+        +e.image
+            +img(data.image, true)
+        +e.data
+            +e.A.title(href='./product-page.html') !{data.title}
+            +e.subtitle !{data.subtitle}
+            +e.weight !{data.weight}
+            +e.footer
+                +e.counter
+                    +product-counter(data.amount)
+                +e.prices
+                    if (data.prices.old)
+                        +e.old-price !{data.prices.old}
+                    +e.current-price !{data.prices.current}

@@ -1,0 +1,8 @@
+mixin sales-card(data)
+    +b.A(href='sale-article-page.html').sales-card
+        +e.background.lazy-bg(data-background=require(`@/assets/images/${data.image}`))
+        +e.content
+            +e.title !{data.title}
+            if (data.subtitle)
+                +e.subtitle !{data.subtitle}
+        +e.link.btn.--orange.--medium Подробнее

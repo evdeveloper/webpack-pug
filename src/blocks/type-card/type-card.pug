@@ -1,0 +1,8 @@
+mixin type-card(data)
+    +b.type-card
+        +e.image
+            +picture-helper(data.image, true)
+        +e.content
+            +e.A.title(href='#') !{data.title}
+            +e.subtitle !{data.subtitle}
+            +e.price !{data.price} <small>за кг</small>

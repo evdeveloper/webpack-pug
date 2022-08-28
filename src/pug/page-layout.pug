@@ -1,0 +1,12 @@
+extends layout
+
+include ../blocks/main-header/main-header.pug
+include ../blocks/page-header/page-header.pug
+include ../blocks/main-footer/main-footer.pug
+
+block page
+    +main-header
+    +page-header(pageTitle)
+    block content
+    +main-footer
+append modals

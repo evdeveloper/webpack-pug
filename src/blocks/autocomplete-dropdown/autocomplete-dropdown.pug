@@ -1,0 +1,9 @@
+mixin autocomplete-dropdown(items)
+    +b.autocomplete-dropdown
+        +e.list
+            each item in items
+                +e.item(tabindex='0' data-id=item.id) !{item.label}
+            //- each item in items
+            //-     +e.item(tabindex='0' data-id=item.id) !{item.label}
+            //- each item in items
+            //-     +e.item(tabindex='0' data-id=item.id) !{item.label}

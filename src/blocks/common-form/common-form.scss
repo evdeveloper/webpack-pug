@@ -1,0 +1,36 @@
+.common-form {
+    &__input {
+        margin-bottom: 16px;
+    }
+
+    &__legal {
+        margin: 16px 0;
+
+        color: rgba($text-color, 0.5);
+        font-size: 12px;
+        line-height: 1.6;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        a {
+            color: inherit;
+        }
+    }
+}
+
+.no-touch {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+@media #{$tablet} {
+    .common-form {
+    }
+}
+
+@media #{$desktop} {
+    .common-form {
+    }
+}

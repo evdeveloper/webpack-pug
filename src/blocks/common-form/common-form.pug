@@ -1,0 +1,8 @@
+include ../custom-input/custom-input
+include ../custom-textarea/custom-textarea
+include ../custom-checkbox/custom-checkbox
+include ../custom-select/custom-select
+
+mixin common-form(action = '/app/ajax')
+    +b.FORM.common-form(method='post' action=action)
+        block

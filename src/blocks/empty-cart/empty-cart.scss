@@ -1,0 +1,25 @@
+.empty-cart {
+    a {
+        color: inherit;
+    }
+    a.btn {
+        color: #ffffff;
+        &:hover {
+            color: $theme-color;
+        }
+    }
+    padding: 24px 0;
+    &__buttons {
+        margin-top: 24px;
+    }
+}
+@media #{$tablet} {
+    .empty-cart {
+        padding: 48px 0;
+    }
+}
+@media #{$desktop} {
+    .empty-cart{
+        padding: 64px 0;
+    }
+}

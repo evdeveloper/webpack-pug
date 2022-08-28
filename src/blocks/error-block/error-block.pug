@@ -1,0 +1,16 @@
+mixin error-block(error)
+    +b.SECTION.error-block
+        +e.bg
+            +img('404/bg.svg')
+        +e.data
+            +e.code(title='Ошибка 404')
+                +e.symbol.--left(aria-hidden='true')
+                    +img('404/l-4.svg')
+                +e.egg(aria-hidden='true')
+                    +img('404/egg.svg')
+                +e.symbol.--right(aria-hidden='true')
+                    +img('404/r-4.svg')
+            +e.P.text.slide-top
+                | Неправильно набран адрес, или такой страницы на сайте больше не существует.
+            +e.A.link.btn.--orange.slide-top(href='/') На главную
+        +e.egg-shadow

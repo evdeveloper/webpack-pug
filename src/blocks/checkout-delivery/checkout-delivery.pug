@@ -1,0 +1,35 @@
+include ../custom-radio/custom-radio
+include ../custom-select/custom-select
+
+mixin checkout-delivery()
+    input(type="hidden" id="zoneName")
+    +b.checkout-step.checkout-delivery
+        +e.body
+            +e.top
+                +e.header
+                    +e.H2.title Доставка
+                p Стоимость доставки по Санкт-Петербургу и области, входящей в зону доставки — 199 рублей (оплачивается отдельно от заказа). Стоимость доставки по зоне Пушкин - 159 рублей.
+                p
+                    a(href='#') Посмотреть зону доставки и подробные условия заказа, оплаты и доставки
+            +e.inputs
+                +e.inputs-row#deliveryCourierBlock
+                    +e.input
+                        +custom-radio({name: 'deliveryMethod', label: 'Доставка курьером по Санкт-Петербургу и районам ЛО, входящим в зону доставки', id: 'deliveryCourier', required: true})(data-delivery='courier' checked='')
+                        +e.dropdown-inputs.active.js-delivery-map
+                            +e.inputs-row
+                                +e.input
+                                    +custom-input({name: 'ADDRESS', label: 'Введите адрес', id: 'checkOutAddress'})
+                                    +autocomplete-dropdown([{id: 0, label: 'Лиговский проспект, 140'}, {id: 1, label: 'Лиговский переулок'},{id: 2, label: 'Лиговский тупик'}])
+                            +e.map
+                                #checkoutZones
+                                
+                +e.inputs-row#deliveryPickupBlock
+                    +e.input
+                        +custom-radio({name: 'deliveryMethod', label: 'Самовывоз', id: 'deliverySelf', required: true})(data-delivery='self')
+                        +e.dropdown-inputs.js-pickup-points
+                            +e.inputs-row
+                                +e.input.--half
+                                    +custom-select(cart.pickupPointsSelect)(id='deliveryPickupPoint' class='bordered')
+                            +e.map
+                                #pickupPointsMap
+                                

@@ -1,0 +1,27 @@
+extends ../page-layout
+
+include ../../blocks/cart-section/cart-section
+include ../../blocks/elevation-tariffs/elevation-tariffs
+include ../../blocks/saved-addresses/saved-addresses
+
+block variables
+    -const pageTitle = 'корзина'
+
+block head
+
+block content
+    +b.SECTION.cart-section
+        +inner
+            +e.wrapper
+                +e.main
+                    +e.checkout
+                        +b.FORM.cart-checkout#cartCheckoutForm
+                        +checkout-payment
+                +e.ASIDE.aside
+                    +e.info
+                        +cart-info
+
+append modals
+    +elevation-tariffs
+    +saved-addresses
+

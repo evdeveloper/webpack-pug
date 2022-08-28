@@ -1,0 +1,11 @@
+mixin faq-section(mod='')
+    +b.faq-section
+        +e.accordion(class=mod)
+            each item in faq
+                +e.block
+                    +e.BUTTON.question.js-trigger(type='button')
+                        | !{item.question}
+                        .icon
+                    +e.answer.content-snippet
+                        each paragraph in item.answer
+                            p !{paragraph}

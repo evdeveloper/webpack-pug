@@ -1,0 +1,5 @@
+mixin img(path, lazyLoad = false)
+    if (lazyLoad)
+        img(class=(typeof lazyLoad === 'boolean') ? 'lazy-img' : lazyLoad data-src=require(`@/assets/images/${path}`), alt="")&attributes(attributes)
+    else
+        img(src=require(`@/assets/images/${path}`), alt="")&attributes(attributes) 

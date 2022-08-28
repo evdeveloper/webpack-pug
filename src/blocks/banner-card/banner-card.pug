@@ -1,0 +1,7 @@
+mixin banner-card({title, text, action})
+    +b.ARTICLE.banner-card
+        +e.BUTTON.close(type='button' title='Закрыть')
+            +icon('close')
+        +e.title !{title}
+        +e.text !{text}
+        +e.A.action(href='#') !{action}

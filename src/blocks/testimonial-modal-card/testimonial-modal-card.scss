@@ -1,0 +1,36 @@
+@import '../modal/modal.scss';
+
+.testimonial-modal-card {
+    .testimonial-card {
+        padding: 0;
+        box-shadow: none;
+        background-color: transparent;
+    }
+
+    &__body {
+        position: relative;
+
+        margin: 0 auto;
+        padding: 55px 24px;
+        width: 100%;
+        max-width: 700px;
+
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.04);
+    }
+}
+
+@media #{$tablet} {
+    .testimonial-modal-card {
+
+        &__body {
+            padding: 72px 48px;
+        }
+    }
+}
+
+@media #{$desktop} {
+    .testimonial-modal-card {
+    }
+}

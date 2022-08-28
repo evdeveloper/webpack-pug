@@ -1,0 +1,41 @@
+.article-section {
+    padding: 48px 0;
+
+    &__image {
+        margin-bottom: 24px;
+        max-width: 400px;
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+    }
+}
+
+@media #{$tablet} {
+    .article-section {
+        padding: 64px 0;
+
+        &__wrapper {
+            display: flex;
+        }
+
+        &__image {
+            padding-right: 24px;
+            max-width: 300px;
+            width: 30%;
+            flex: 1 1 auto;
+        }
+
+        &__content {
+            width: 50%;
+            flex: 1 1 auto;
+        }
+    }
+}
+
+@media #{$desktop} {
+    .article-section {
+        padding: 80px 0;
+    }
+}
